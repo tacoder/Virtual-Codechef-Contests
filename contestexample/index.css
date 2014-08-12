@@ -25,7 +25,7 @@ html,body{
     margin-top:70px;
     margin-bottom:0px;
     margin-right:0px;
-    margin-left:200px;
+    margin-left:15%;
     padding:20px;
     font-family:"Arial Black", Gadget, sans-serif;
 	
@@ -42,7 +42,7 @@ html,body{
     z-index:2;
 }
 
-div a{
+#topnav a{
 	height:30px;
 	padding:20px;
 	color: #CCFFFF;
@@ -50,7 +50,15 @@ div a{
 	display: block;
 }
 
-div a:hover{
+#sidenav a{
+	height:25px;
+	padding:10px;
+	color: #CCFFFF;
+	text-decoration: none;
+	display: block;
+}
+
+#topnav a:hover,#sidenav a:hover{
 	color: #ffffff;
 	text-shadow: 1px 1px 15px #FFFFFF;
 }
@@ -74,7 +82,7 @@ div a:hover{
 
 #sidenav{
 	position: fixed;
-	width:200px;
+	width:15%;
 	height:100%;
 	margin-bottom: 0px;
 	margin-top: 70px;
@@ -89,13 +97,46 @@ div a:hover{
 	font:   20px Trebuchet MS,Verdana,arial;
 	color: #CCFFFF;
 }
-.sidenavlink a{
-	padding:10px;
-}
 .topnavright:hover,.topnavleft:hover,.sidenavlink:hover{
 	background: #09F;
 }
 
 #logo{
 	float:left;
+}
+#maincontent .content h3{
+    color: #656565;
+    font-size: 15px;
+    margin: 8px 0px 12px;
+    font-weight: 700;
+}
+#maincontent .content p{
+	margin: 0px;
+	margin-top: 7px;
+	font: 12px/1.5em Arial,sans-serif;
+	padding:0;
+	text-align: justify;
+	border-collapse: separate;
+	color:#444;
+}
+#maincontent .content ul {
+	
+	font: 12px/1.5em Arial,sans-serif;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    list-style: disc outside none;
+    padding-bottom: 6px;
+}
+#maincontent .content li{
+	color: #444;
+	font-family: Arial,Helvetica,sans-serif;
+    margin: 0px;
+    padding: 0px;
+	padding-left: 10px;
+    list-style: disc outside none;
+    padding-bottom: 6px;
+    list-style-type: square;
+    list-style-position: inside;
 }

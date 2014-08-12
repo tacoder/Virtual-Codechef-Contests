@@ -2,9 +2,10 @@
 <?php
 include_once('simple_html_dom.php');
 include_once('connect.php');
-
-if(!mysqli_select_db($con, "contests"))
-	echo "Cannot open database!!";
+set_time_limit (0);
+if(!mysqli_select_db($con, "contests")){
+	echo "Cannot open database!!".mysqli_error($con);
+}
 
 function isLeap($year){
 	return ($year % 4 == 0)&&($year%100!=0||$year%400==0);
@@ -38,41 +39,51 @@ function toUnix($str){
 }
 
 function add_contest($code){
+	global $con;
 	$contPage=file_get_html('http://www.codechef.com/'.$code);
-	foreach($contPage->find('div[class="table-questions"]') as $div){
-		foreach($div->find('table[class="problems"]') as $table){
-			foreach($table->find('tr[class=problemrow]') as $tr){
-				//foreach($tr->find('td') as $td){
-					echo $tr->children(0)->plaintext."<br />";
-					echo $tr->children(1)->plaintext."<br />";
-					echo $tr->children(2)->plaintext."<br />";
-					echo $tr->children(3)->plaintext."<br />";
-
-				//}
+	if(mysqli_query($con,"CREATE TABLE ".$code."( name varchar(100), code varchar(15) unique key, SuccSub int, Accuracy decimal(4,2));")){
+		foreach($contPage->find('div[class="table-questions"]') as $div){
+			foreach($div->find('table[class="problems"]') as $table){
+				foreach($table->find('tr[class=problemrow]') as $tr){
+					$name= trim($con->real_escape_string($tr->children(0)->plaintext), " \t\n\r\0\x0B" );
+					$pcode= $con->real_escape_string($tr->children(1)->plaintext);
+					$succsub= $tr->children(2)->plaintext;
+					$acc= $tr->children(3)->plaintext;
+					
+					if(mysqli_query($con,"insert into ".$code." values('".$name."','".$pcode."','".$succsub."','".$acc."');")){
+						echo "Elements inserted into ".$code."('".$name."','".$pcode."','".$succsub."','".$acc."')";
+					} else {
+						echo "Error inserting into table: " . mysqli_error($con);
+					}
+					echo "<br />";
+				}
 			}
 		}
 	}
-
+	else{
+		echo "Error Creating table ".$code.":".mysqli_error($con)."<br />";
+	}
+	
 }
 
-$t = time();
-echo "current time is:".$t;
+$tstart = time();
+echo "Parsing started at:".$tstart;
+if(!mysqli_query($con,'select 1 from lists')){
+	mysqli_query($con,'CREATE TABLE list(code varchar(20) not null,name varchar(200) not null primary key,start bigint not null,end bigint not null);');
+}
 $html=file_get_html('http://www.codechef.com/contests');
-#CLASS = table-questions id=statusdiv
 foreach($html->find('div[id="statusdiv"]') as $div){
 	foreach($div->find('table') as $table){
 		foreach ($table->find('tr') as $tr) {
 			if($tr->class!="headerrow")
 			{
-				#$mysqli->real_escape_string($city);
 			$code =  $con->real_escape_string($tr->children(0)->plaintext);
 			$name =  $con->real_escape_string($tr->children(1)->plaintext);
 			$start = toUnix($tr->children(2)->plaintext);
 			$end = toUnix($tr->children(3)->plaintext);
-			if($end < $t)
-				#echo "(".$code.",".$name.",".$start.",".$end.")<br />";
+			if($end < $tstart)
 				if(mysqli_query($con,"insert into list values('".$code."','".$name."','".$start."','".$end."');")){
-					echo "inserted elements successfully('".$code."','".$name."','".$start."','".$end."')";
+					echo "Elements inserted into list('".$code."','".$name."','".$start."','".$end."')";
 					add_contest($code);
 				} else {
 					echo "Error inserting into table: " . mysqli_error($con);
@@ -82,4 +93,8 @@ foreach($html->find('div[id="statusdiv"]') as $div){
 		}
 	}                         
 }
+$tend = time();
+echo "Parsing started at:".$tend;
+echo "<br />";
+echo "Total Time taken =".($tend-$tstart);
 ?>
