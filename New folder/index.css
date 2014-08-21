@@ -1,0 +1,101 @@
+
+*{
+	margin: 0px;
+	border: 0px;
+}
+html,body{
+	/*height:100%;*/
+	/*background-image:url('bg.jpg');*/
+	/*text-shadow:0px 0px 2px #FFFFFF;*/
+
+	background: url('bg.jpg') no-repeat;
+	background-attachment: fixed;
+	background-size: 25%;
+	background-position: 50% 50%;
+}
+#maincontent{
+	display: block;
+    position:absolute;
+    height:auto;
+    /*bottom:0;*/
+    min-width: 500px;
+    top:0;
+    left:0;
+    right:0;
+    margin-top:70px;
+    margin-bottom:0px;
+    margin-right:0px;
+    margin-left:200px;
+    padding:20px;
+    font-family:"Arial Black", Gadget, sans-serif;
+	
+}
+#topnav{
+	position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+	height: 70px;
+	background: #06c; 
+    border-collapse: collapse; 
+    box-shadow: 0px 0px 15px 3px #000000;
+    z-index:2;
+}
+
+div a{
+	height:30px;
+	padding:20px;
+	color: #CCFFFF;
+	text-decoration: none;
+	display: block;
+}
+
+div a:hover{
+	color: #ffffff;
+	text-shadow: 1px 1px 15px #FFFFFF;
+}
+
+#topnav div{
+
+	height: 70px;
+	font:   25px Trebuchet MS,Verdana,arial;
+	color: #CCFFFF;
+}
+
+.topnavleft {
+	margin:0px;
+	float:left;
+}
+
+.topnavright{
+	margin:0px;
+	float:right;
+}
+
+#sidenav{
+	position: fixed;
+	width:200px;
+	height:100%;
+	margin-bottom: 0px;
+	margin-top: 70px;
+	margin-left: 0px;
+	padding-top: 10px;
+	background: #06c; /* Old browsers */
+	box-shadow: 0px 0px 6px 2px #000;
+    z-index:1;
+}
+.sidenavlink {
+	width:100%;
+	font:   20px Trebuchet MS,Verdana,arial;
+	color: #CCFFFF;
+}
+.sidenavlink a{
+	padding:10px;
+}
+.topnavright:hover,.topnavleft:hover,.sidenavlink:hover{
+	background: #09F;
+}
+
+#logo{
+	float:left;
+}

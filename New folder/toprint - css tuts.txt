@@ -1,0 +1,31 @@
+
+a:link { color : black; } /* Color names */
+a:link { color : #000000; } /* Hex */
+a:link { color : #000; } /* Hex (shorthand) */
+a:link { color : rgb(0,0,0); } /* RGB */
+a:link { color : rgb(100%,100%,100%); } /* RGB percent*/
+
+*************PRINT THIS**************
+http://www.w3.org/TR/CSS2/images/boxdim.png
+
+a { color : #91325d; }
+a:link { color : #91325d; }
+a:visited { color : #c898ae; }
+a:hover { background-color : #c898ae; color : #fff; text-decoration : none; }
+a:active, a:focus { background-color : #91325d; color : #fff; text-decoration : none; }
+
+/*
+
+L	link
+o
+V	visited
+e
+
+H	hover
+A	active (focus)
+t
+e
+
+*/
+
+li a { display : block; } /*forces links to be clickable anywhere in the surrounding box*/

@@ -1,0 +1,15 @@
+
+body{
+	font-family:Verdana;
+	font-style: italic;
+	font-size: 15px;
+}
+
+table {
+   border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    padding: 5px;
+}
