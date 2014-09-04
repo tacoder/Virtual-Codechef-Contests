@@ -1,1 +1,0 @@
-document.write("this came from js1.js");
