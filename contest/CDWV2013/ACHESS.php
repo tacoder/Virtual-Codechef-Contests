@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Chess Board of Avengers</h1> <?php require("../../includes/footer.php"); ?>

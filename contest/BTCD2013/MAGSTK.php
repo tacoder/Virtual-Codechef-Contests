@@ -1,0 +1,58 @@
+<?php require("../../includes/header.php"); ?><h1>Magic Sticks</h1><div class="content">
+<p> </p>
+<p>Mark,a magician, has a great interest in arranging sticks. He use to play with various sticks of different lengths. He put n sticks on the table along one axis, going from left to right. Every stick stands perpendicular to that axis so that the axis passes through the center of its base. The i-th stick has the coordinate xi and the length li. Now Mark wants to learn for every stick, how many sticks will fall if he pushes it to the right. Help him in finding that.<br />
+<br /><br />
+Consider that a stick falls if it is touched strictly above the base. In other words, the fall of the stick with the initial coordinate x and height h leads to the fall of all sticks on the segment [x + 1, x + h - 1].</p>
+<p> </p>
+<h3>Input</h3>
+<p>The first line contains the number of test cases(1&lt;= T &lt;=10). The next line contains integer n (1 ≤ n ≤ 10^5) which is the number of sticks. Then follow n lines containing two integers xi and li ( - 10^8 ≤ xi ≤ 10^8, 2 ≤ li ≤ 10^8) each, which are the coordinate and height of every stick. No two sticks stand on one point.
+</p>
+<h3>Output</h3>
+<p>Print n space-separated numbers zi — the number of sticks that will fall if Mark pushes the i-th stick to the right (including the stick itself).
+</p>
+<h3>Example</h3>
+<pre>
+Input
+1
+4
+16 5
+20 5
+10 10
+18 2
+
+Output
+3 1 4 1 
+
+Input
+1
+4
+0 10
+1 5
+9 10
+15 10
+
+Output
+4 1 2 1 
+</pre><p> </p>    </div><table cellspacing="0" cellpadding="0" align="left">
+        <tr>
+            <td width="14%">Author:</td>
+            <td><a href="/users/harshg0910">harshg0910</a></td>
+		</tr>
+				                
+        		<tr>
+            <td width="14%">Date Added:</td>
+            <td>16-08-2013</td>
+        </tr>
+        <tr>
+            <td width="14%">Time Limit:</td>
+            <td>0.1 sec</td>
+        </tr>
+        <tr>
+            <td width="14%">Source Limit:</td>
+            <td>50000 Bytes</td>
+        </tr>
+        <tr>
+            <td width="14%">Languages:</td>
+            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.8.1, CPP11, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAR, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.1.2, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>
+        </tr>
+    </table> <?php require("../../includes/footer.php"); ?>

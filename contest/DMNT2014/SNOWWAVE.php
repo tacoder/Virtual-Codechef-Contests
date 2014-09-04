@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Snow leopard and waves</h1> <?php require("../../includes/footer.php"); ?>

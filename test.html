@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+	function countDown(secs){
+		if(secs < 0)
+			return "Time over!!"
+		return 	  (Math.floor(secs/86400)>0?(Math.floor(secs/86400) + " Day(s), " ):"")
+				+ (Math.floor((secs % 86400)/3600)>0?Math.floor((secs % 86400)/3600) + " Hour(s), ":"") 
+				+ (Math.floor((secs % 3600)/60)>0?Math.floor((secs % 3600)/60) + " Minute(s), ":"")
+				+ (secs % 60) + " Second(s)";
+
+	}
+
+	function set(endtime,id){
+	    var d = (new Date).getTime()/1000 |0 ;
+		var t1=document.getElementById(id);	
+		t1.innerHTML = countDown(endtime - d);
+	}
+	setInterval(function(){set(1509786100,"time1")},1000);
+	setInterval(function(){set(1409789680,"time2")},1000);
+
+</script>
+<div id="time1"></div>
+<div id="time2"></div>

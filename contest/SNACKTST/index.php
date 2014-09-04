@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><?php require("../../includes/all_problems.php"); ?><?php require("../../includes/footer.php"); ?>

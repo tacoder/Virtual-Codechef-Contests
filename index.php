@@ -6,6 +6,9 @@
 	<title>Virtual codechef contests</title>
 	<link rel="stylesheet" type="text/css" href="index.css" />
 	<link rel="icon" href="favicon.ico" type="../image/x-icon"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="includes/topnav.js"></script>
+	<script src="includes/countdown.js"></script>
 </head>
 
 <body>
@@ -19,46 +22,119 @@
 	</div>
 	
 	<div  id="maincontent">
-	<table>
-		<tr>
-			<td>Name</td>
-			<td>Code</td>
-			<td>Successful Submission</td>
-			<td>Accuracy</td>
-		</tr>
-		<tr>
-			<td>Copy-Paste</td>
-			<td>RRCOPY</td>
-			<td>1950</td>
-			<td>53.48</td>
-		</tr>
-		<tr>
-			<td>Sum Queries</td>
-			<td>RRSUM</td>
-			<td>1652</td>
-			<td>44.38</td>
-		</tr>
-		<tr>
-			<td>Friends</td>
-			<td>RRFRIENDS</td>
-			<td>152</td>
-			<td>5.67</td>
-		</tr>
-		<tr>
-			<td>Present for Andrii</td>
-			<td>RRDAG</td>
-			<td>32</td>
-			<td>8.64</td>
-		</tr>
-		<tr>
-			<td>Tree Again</td>
-			<td>RRTREE2</td>
-			<td>16</td>
-			<td>14.78</td>
-		</tr>
-	</table>
+
+<!--
+<table class="contestTable">
+
+<tr class="topRow">
+	<td>Name of contest</td>
+	<td > Time left</td>
+</tr>
+
+<tr class="rowLight">
+	<td>leleloleloelel</td>
+	<td id="tm2"></td>
+</tr>
+
+<tr class="rowDark">
+	<td>leleloleloele</td>
+	<td id="tm3"></td>
+</tr>
+
+<tr class="rowLight">
+	<td>leleloleloelel</td>
+	<td id="tm1"></td>
+</tr>
+
+<tr class="rowDark">
+	<td>leleloleloelel</td>
+	<td id="tm3"></td>
+</tr>
+
+<tr class="rowLight">
+	<td>leleloleloelel</td>
+	<td id="tm2"></td>
+</tr>
+
+<tr class="rowDark">
+	<td>leleloleloelel</td>
+	<td id="tm3"></td>
+</tr>
+
+<tr class="rowLight">
+	<td>leleloleloelel</td>
+	<td id="tm2"></td>
+</tr>
+
+<tr class="rowDark">
+	<td>leleloleloelel</td>
+	<td id="tm3"></td>
+</tr>
+
+<tr class="rowLight">
+	<td>leleloleloelel</td>
+	<td id="tm2"></td>
+</tr>
+
+<tr class="rowDark">
+	<td>leleloleloelel</td>
+	<td id="tm3"></td>
+</tr>
+
+
+
+</table>
+-->
+<script type="text/javascript">
+
 	
+	set(1509786100,"tm1");
+	set(1499789680,"tm2");
+	set(1499789680,"tm3");
+
+</script>
+
+		<?php 
+			if(isset($_SESSION['username'])){
+				require("includes/connect.php");
+				if(!mysqli_select_db($con, "users")){
+						echo mysqli_errno($con);
+						// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
+						//echo "Cannot open database!!".mysqli_error($con)."<br />";
+						die();
+					}
+				$curtime = time();
+				$qr = 'select * from '.$con->real_escape_string($_SESSION['username']).' where end > '.$curtime.';';
+				$query = mysqli_query($con,$qr);
+				$count = 0;
+				if(!empty($query))
+					while ($row = mysqli_fetch_assoc($query)) {
+				        $tarr[] = $row['end'];
+				        $tcon[] = $row['contestname'];
+				        $tcod[] = $row['contestcode'];
+				        $count++;
+				    }
+				echo '<table class="contestTable">';
+				echo '<tr class="topRow"> 	<td>Name of contest</td> 	<td > Time left</td> </tr>';
+				for ($i=0;$i<$count;$i++) {
+					echo '<tr class="'.($i%2==0?"rowLight":"rowDark").'">';
+					echo '<td><a href="/virtualcode/contest/'.$tcod[$i].'/">'.$tcon[$i].'</a></td>';
+					echo '<td id="tm'.$i.'"></td>';
+					echo '</tr>';
+				}
+				echo '</table>';
+				echo '<script>';
+				for ($i=0;$i<$count;$i++){
+					echo 'set('.$tarr[$i].',"tm'.$i.'");';
+				}
+				echo '</script>';
+				
+			}
+			else{
+				echo "Hello and welcome to this website!!";
+			}
+		?>
 	</div>
-</body>
+	</body>
 
 </html>

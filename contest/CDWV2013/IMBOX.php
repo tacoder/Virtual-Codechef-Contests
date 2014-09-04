@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Destroying the Weapon Warehouse</h1> <?php require("../../includes/footer.php"); ?>

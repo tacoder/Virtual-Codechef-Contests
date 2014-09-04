@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>The Lazy Bones</h1> <?php require("../../includes/footer.php"); ?>

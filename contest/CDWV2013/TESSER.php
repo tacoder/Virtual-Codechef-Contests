@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Finding the Tesserect</h1> <?php require("../../includes/footer.php"); ?>

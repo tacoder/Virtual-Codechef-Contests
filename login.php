@@ -23,8 +23,13 @@
 	
 	<div  id="maincontent">
 		<div id="form-wrapper">
-			<span style="color:red">
-		<?php 
+			<span class="formError">
+		<?php
+		if(isset($_GET['error']))
+			echo htmlspecialchars ($_GET['error']);
+		if(isset($_SESSION['loggedIn']))
+			 header('Location: index.php');  
+		// ---- Check if user is already logged in.
 		if(isset($_POST['username']) && isset($_POST['password']) )
 		{
 			require("includes/connect.php");
@@ -32,17 +37,19 @@
 				echo "Cannot open database!!".mysqli_error($con)."<br />";
 				die("Tell my wife i love her.");
 			}
-			$u = $_POST["username"];
-			$p = $_POST["password"];
-			$query = mysqli_query($con,'select * from logininfo where username="'.$u.'" and password="'.$p.'";');
-			if($query->num_rows == 0)
-			{
-
-				/*if(mysqli_errno($con) == 1062)*/
-				echo "Username or Password incorrect";
-			} else {
+			$u = $con->real_escape_string($_POST["username"]);
+			$p = $con->real_escape_string($_POST["password"]);
+			$query = mysqli_query($con,'select * from logininfo where username="'.$u.'" ;');
+			$row = $query->fetch_assoc();
+			if(!is_null($row) && password_verify($p,$row["password"])) {
 				echo "Login successful";
+				
+				$_SESSION['loggedIn'] = true;
+				$_SESSION['username'] = $u;
 				header('Location: index.php');  
+			} else {
+				/*if(mysqli_errno($con) == 1062)*/
+				echo "Username or Password incorrect<br />";
 			}
 		}
 		?></span>

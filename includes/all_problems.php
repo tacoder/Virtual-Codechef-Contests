@@ -1,0 +1,1 @@
+<p>Click on a problem to start solving it.</p>

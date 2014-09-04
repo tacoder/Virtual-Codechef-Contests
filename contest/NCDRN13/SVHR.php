@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Save the human race</h1> <?php require("../../includes/footer.php"); ?>
