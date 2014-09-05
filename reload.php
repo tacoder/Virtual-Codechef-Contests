@@ -47,11 +47,8 @@ function add_problem($pcode,$code,$name){
 	fwrite($file,'<?php require("../../includes/header.php"); ?>');
 	fwrite($file,"<h1>$name</h1>");
 	foreach($contPage->find('div[class="primary-col-wrapper"]') as $outerdiv){
-		echo '1';
 		foreach($outerdiv->find('div[class="primary-colum-width-left"]') as $div){
-			echo '2';
 			foreach($div->children(0)->find('div[class="content"]') as $content){
-				echo '3';
 				foreach($content->find('h3') as $head){
 					$value = $head->innertext;
 					if($value == "All submissions for this problem are available."){
