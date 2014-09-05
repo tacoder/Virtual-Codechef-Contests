@@ -124,9 +124,11 @@ html,body{
 	background: #CC6600;
 }
 
-
 .topnavright:hover,.topnavleft:hover,#logo{
 	background: #CC6600;
+}
+.topnavright a:hover{
+	cursor:default;
 }
 .sidenavlink:hover{
 	background: #E68A00;

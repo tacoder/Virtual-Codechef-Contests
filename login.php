@@ -46,6 +46,7 @@
 				
 				$_SESSION['loggedIn'] = true;
 				$_SESSION['username'] = $u;
+				$_SESSION['handle'] = $row['handle'];
 				header('Location: index.php');  
 			} else {
 				/*if(mysqli_errno($con) == 1062)*/
