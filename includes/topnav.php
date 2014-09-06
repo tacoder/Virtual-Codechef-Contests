@@ -8,7 +8,7 @@ session_start();
 if(!isset($_SESSION['loggedIn']))
 	echo '<div class="topnavright"> <a href="login.php">Login</a> </div></div>';
 else{
-	echo '<div class="topnavright"><a href="">'.$_SESSION['username'].'</a> </div></div>';
+	echo '<div class="topnavright"><a href="#">'.$_SESSION['username'].'</a> </div></div>';
 	echo '<div id="logInBox">';
 	echo '<a href="account.php">Account</a>';
 	echo '<a href="logout.php">Log Out</a>';

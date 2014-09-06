@@ -1,1 +1,1 @@
-<?php require("../../includes/header.php"); ?><h1>UVland Traffic</h1> <?php require("../../includes/footer.php"); ?>
+<?php require("../../includes/header.php"); ?><h1>UVland Traffic</h1><?php require("../../includes/footer.php"); ?>

@@ -41,13 +41,17 @@ function toUnix($str){
 function add_problem($pcode,$code,$name){
 	$contPage=/*file_get_html('http://www.codechef.com/problems/'.$pcode);*/
 	file_get_html('http://www.codechef.com/problems/'.$pcode, false, null,  -1, -1,  true, true,  DEFAULT_TARGET_CHARSET,false);
+	echo $contPage;
 	$file = fopen("contest/".$code."/".$pcode.".php","w");
 	//echo $contPage;
 	fwrite($file,'<?php require("../../includes/header.php"); ?>');
 	fwrite($file,"<h1>$name</h1>");
 	foreach($contPage->find('div[class="primary-col-wrapper"]') as $outerdiv){
+		echo '1';
 		foreach($outerdiv->find('div[class="primary-colum-width-left"]') as $div){
+			echo '2';
 			foreach($div->children(0)->find('div[class="content"]') as $content){
+				echo '3';
 				foreach($content->find('h3') as $head){
 					$value = $head->innertext;
 					if($value == "All submissions for this problem are available."){
@@ -67,7 +71,6 @@ function add_problem($pcode,$code,$name){
 		}
 	}
 
-	fwrite($file,'<a href="http://www.codechef.com/submit/'.$pcode.'" target="_BLANK"><div id="submitButton">Submit</div></a>');
 	fwrite($file,'<?php require("../../includes/footer.php"); ?>');
 }
 
