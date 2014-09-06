@@ -6,6 +6,8 @@
 	<title>Virtual codechef contests</title>
 	<link rel="stylesheet" type="text/css" href="index.css" />
 	<link rel="icon" href="favicon.ico" type="../image/x-icon"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="includes/topnav.js"></script>
 </head>
 
 <body>

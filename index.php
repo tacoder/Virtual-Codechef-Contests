@@ -23,76 +23,7 @@
 	
 	<div  id="maincontent">
 
-<!--
-<table class="contestTable">
 
-<tr class="topRow">
-	<td>Name of contest</td>
-	<td > Time left</td>
-</tr>
-
-<tr class="rowLight">
-	<td>leleloleloelel</td>
-	<td id="tm2"></td>
-</tr>
-
-<tr class="rowDark">
-	<td>leleloleloele</td>
-	<td id="tm3"></td>
-</tr>
-
-<tr class="rowLight">
-	<td>leleloleloelel</td>
-	<td id="tm1"></td>
-</tr>
-
-<tr class="rowDark">
-	<td>leleloleloelel</td>
-	<td id="tm3"></td>
-</tr>
-
-<tr class="rowLight">
-	<td>leleloleloelel</td>
-	<td id="tm2"></td>
-</tr>
-
-<tr class="rowDark">
-	<td>leleloleloelel</td>
-	<td id="tm3"></td>
-</tr>
-
-<tr class="rowLight">
-	<td>leleloleloelel</td>
-	<td id="tm2"></td>
-</tr>
-
-<tr class="rowDark">
-	<td>leleloleloelel</td>
-	<td id="tm3"></td>
-</tr>
-
-<tr class="rowLight">
-	<td>leleloleloelel</td>
-	<td id="tm2"></td>
-</tr>
-
-<tr class="rowDark">
-	<td>leleloleloelel</td>
-	<td id="tm3"></td>
-</tr>
-
-
-
-</table>
--->
-<script type="text/javascript">
-
-	
-	set(1509786100,"tm1");
-	set(1499789680,"tm2");
-	set(1499789680,"tm3");
-
-</script>
 
 		<?php 
 			if(isset($_SESSION['username'])){
