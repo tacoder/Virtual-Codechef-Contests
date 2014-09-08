@@ -4,6 +4,10 @@ function returnError($errcode){
 	echo $errcode;
 }
 $st = time();
+echo "script started at:";
+echo $st;
+echo "<br />";
+
 if(isset($_GET['ccode'],$_SESSION['username'])){
 	$ccode = $_GET['ccode'];
 	$timeout = 3;
@@ -67,6 +71,9 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 		returnError("No contest code specified.");
 }
 $en = time();
+echo "script ended at:";
+echo $en;
+echo "<br />";
 echo "total time:";
 echo $en-$st;
 ?>
