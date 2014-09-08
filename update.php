@@ -3,8 +3,11 @@ session_start();
 function returnError($errcode){
 	echo $errcode;
 }
+$st = time();
 if(isset($_GET['ccode'],$_SESSION['username'])){
 	$ccode = $_GET['ccode'];
+	$timeout = 3;
+	require('includes/simple_html_dom.php');
 	require("includes/connect.php");
 				if(!mysqli_select_db($con, "users")){
 						echo mysqli_errno($con);
@@ -31,7 +34,7 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 						//echo "Cannot open database!!".mysqli_error($con)."<br />";
 						die();
 					}
-				$checkTime = $curtime - 30;
+				$checkTime = $curtime - $timeout;
 				$qr = 'select * from updatelogs where time > '.$checkTime.' and username = "'.$_SESSION['username'].'";';
 				echo $qr."<br />";
 				$query = mysqli_query($con,$qr);
@@ -41,12 +44,20 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 					//--- insert query.
 				} else {
 					/*if(mysqli_errno($con) == 1062)*/
-					echo "similar request happened less than 30 secs ago<br />";
+					echo "similar request happened less than ".$timeout." secs ago<br />";
 				}
 				$qr = 'insert into updatelogs value ("'.$_SERVER['REMOTE_ADDR'] .'","'.$curtime.'","'.$_SESSION['username'].'")';
 				echo $qr."<br />";
 				$query = mysqli_query($con,$qr);
 				echo mysqli_error($con);
+				if(!mysqli_select_db($con, "contests")){
+					echo "Cannot open database!!".mysqli_error($con);
+				}
+				$query = mysqli_query($con,"select code,name from ".$ccode." order by code;");
+				$result = $query->fetch_all( MYSQLI_ASSOC);
+				foreach( $result as $row ){
+				   $contPage=file_get_html('http://www.codechef.com/status/'.$row['code'].','.$_SESSION['handle'].'');
+				} 
 					
 				
 } else {
@@ -55,5 +66,7 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 	else
 		returnError("No contest code specified.");
 }
-
+$en = time();
+echo "total time:";
+echo $en-$st;
 ?>

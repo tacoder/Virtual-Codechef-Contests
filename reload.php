@@ -1,7 +1,7 @@
 
 <?php
-include_once('includes/simple_html_dom.php');
-include_once('includes/connect.php');
+require('includes/simple_html_dom.php');
+require('includes/connect.php');
 set_time_limit (0);
 if(!mysqli_select_db($con, "contests")){
 	echo "Cannot open database!!".mysqli_error($con);

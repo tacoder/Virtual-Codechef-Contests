@@ -7,7 +7,7 @@
 		echo "Cannot open database!!".mysqli_error($con);
 	}
 	echo  '<div class="sidenavlink"><a href="contest/'.$con->real_escape_string($url[3]).'/index.php" >All problems</a></div>';
-	$query = mysqli_query($con,"select code,name from ".$con->real_escape_string($url[3]).";");
+	$query = mysqli_query($con,"select code,name from ".$con->real_escape_string($url[3])." order by code;");
 	$result = $query->fetch_all( MYSQLI_ASSOC);
 	foreach( $result as $row ){
 	   $c = $row['code'];
