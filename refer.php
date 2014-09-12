@@ -27,16 +27,17 @@ if(isset($_POST['code']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'
 			//echo "Cannot open database!!".mysqli_error($con)."<br />";
 			die();
 		}
-	$query = mysqli_query($con,'select * from '.$_SESSION['username'].' where contestcode = "'.$_POST['code'].'";');
+	$curtime = time();
+	$query = mysqli_query($con,'select * from '.$_SESSION['username'].' where contestcode = "'.$_POST['code'].'" and end > '.$curtime.';');
 	if(mysqli_errno($con) == 1146){
 		//create table for user.
 		$query = mysqli_query($con,'create table '.$_SESSION['username'].'( contestname varchar(150) not null, contestcode varchar(20) not null, nproblems int not null, start bigint(20) unsigned not null, end bigint(20) unsigned not null unique key, rank int unsigned, totaltime bigint(15) unsigned );');
 	}
-	$query = mysqli_query($con,'select * from '.$_SESSION['username'].' where contestcode = "'.$_POST['code'].'";');
-	echo 'select * from '.$_SESSION['username'].' where contestcode = "'.$_POST['code'].'";';
+	$query = mysqli_query($con,'select * from '.$_SESSION['username'].' where contestcode = "'.$_POST['code'].'" and end > "'.$curtime.'";');
+	echo mysqli_error($con);
 	if(mysqli_num_rows($query) == 0){
 		echo "query empty";
-		$curtime = time();
+		
 		$query = mysqli_query($con,"SELECT COUNT(*) totalColumns FROM   INFORMATION_SCHEMA.COLUMNS WHERE  table_name = '".$_SESSION['username']."' AND  TABLE_SCHEMA = 'users' ;");
 		$arr = mysqli_fetch_assoc($query);
 		$ncols = $arr['totalColumns'];

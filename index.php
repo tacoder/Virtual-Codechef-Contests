@@ -26,6 +26,7 @@
 
 
 		<?php 
+			echo time();
 			if(isset($_SESSION['username'])){
 				require("includes/connect.php");
 				if(!mysqli_select_db($con, "users")){
