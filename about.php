@@ -21,7 +21,7 @@
 	</div>
 	
 	<div  id="maincontent">
-		<p>This website allows you to participate in past codechef contests. ayy lmao 👽</p>
+		<p>This website allows you to participate in past codechef contests.</p>
 	</div>
 </body>
 
