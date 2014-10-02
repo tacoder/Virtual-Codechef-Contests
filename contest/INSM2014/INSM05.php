@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Long live the Bacteria</h1><?php require("../../includes/footer.php"); ?>
