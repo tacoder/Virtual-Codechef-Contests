@@ -3,16 +3,6 @@
 	margin: 0px;
 	
 }
-html,body{
-	height:100%;
-	/*background-image:url('bg.jpg');*/
-	/*text-shadow:0px 0px 2px #FFFFFF;*/
-
-	background: url('bg.jpg') no-repeat;
-	background-attachment: fixed;
-	background-size: 25%;
-	background-position: 50% 50%;
-}
 #maincontent{
 	
 	display: block;
@@ -37,6 +27,7 @@ html,body{
     border-collapse: collapse; 
     box-shadow: 0px 0px 15px 3px #333;
     z-index:2;
+    background: url('topnav.png') repeat;
 }
 
 #sidenav{
@@ -53,6 +44,8 @@ html,body{
 	background: #333; /* Old browsers */
 	box-shadow: 0px 0px 6px 2px #4C2E00;
     z-index:1;
+    background: url('sidenav.png') repeat;
+	
 }
 
 #topnav a{
@@ -115,6 +108,7 @@ html,body{
 	background: #E68A00; 
 	height:100px !important;
 	box-shadow: 0px 0px 5px 2px #333;
+	background: url('topnav.png') repeat;
 }
 #logInBox a{
 	padding:10px;
@@ -122,11 +116,11 @@ html,body{
 }
 
 #logInBox a:hover{
-	background: #CC6600;
+	background: rgba(204, 102, 0,0.7);
 }
 
 .topnavright:hover,.topnavleft:hover,#logo{
-	background: #CC6600;
+	background: rgba(204, 102, 0,0.5);
 }
 .topnavright a:hover{
 	cursor:default;
@@ -212,9 +206,6 @@ html,body{
 	color:#CC6600;
 	
 }
-#submitButton{
-	background-color: black;
-}
 #maincontent
 .unsolved{
 	border-right-width: 10px;
@@ -233,7 +224,7 @@ html,body{
 	border-right-color:#00CC33;	
 }
 */
-#submitButton {
+#submitLink {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
@@ -256,7 +247,7 @@ html,body{
 	text-indent:0;
 	border:1px solid #eeb44f;
 	display:inline-block;
-	color:#8c4507;
+	color:#8c4507 !important;
 	font-family:Verdana;
 	font-size:15px;
 	font-weight:normal;
@@ -271,16 +262,18 @@ html,body{
 	text-align:center;
 	text-shadow:1px 1px 0px #cc9f52;
 }
-#submitButton:hover {
+#submitLink:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d97b09), color-stop(1, #eda853) );
 	background:-moz-linear-gradient( center top, #d97b09 5%, #eda853 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d97b09', endColorstr='#eda853');
 	background-color:#d97b09;
-}#submitButton:active {
+}#submitLink:active {
 	position:relative;
 	top:1px;
 }
-
+#problem-content{
+	display: table;
+}
 .contestTable{
 left: 0px;
 right: 0px;

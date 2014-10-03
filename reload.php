@@ -43,7 +43,7 @@ function toUnix($str){
 function add_problem($pcode,$code,$name){
 	$contPage=/*file_get_html('http://www.codechef.com/problems/'.$pcode);*/
 	file_get_html('http://www.codechef.com/problems/'.$pcode, false, null,  -1, -1,  true, true,  DEFAULT_TARGET_CHARSET,false);
-	echo $contPage;
+	//echo $contPage;
 	$file = fopen("contest/".$code."/".$pcode.".php","w");
 	//echo $contPage;
 	fwrite($file,'<?php require("../../includes/header.php"); ?>');

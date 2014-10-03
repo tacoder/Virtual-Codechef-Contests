@@ -47,7 +47,7 @@
 <p>211</p>
 <p>Note for INPUT4:- Although digit 1 is repeated but since it occurs twice, so it </p>
 <p>should be used twice in the output</p>
-</h5></h5></h5></h5></h5></h5></h5></h5>    </div><table cellspacing="0" cellpadding="0" align="left">
+</h5></h5></h5></h5></h5></h5></h5></h5>    <table cellspacing="0" cellpadding="0" align="left">
         <tr>
             <td width="14%">Author:</td>
             <td><a href="/users/arvchamp">arvchamp</a></td>
@@ -69,4 +69,4 @@
             <td width="14%">Languages:</td>
             <td>C, CPP 4.3.2, CPP 4.8.1, GO, JAVA</td>
         </tr>
-    </table> <?php require("../../includes/footer.php"); ?>
+    </table> </div><?php require("../../includes/footer.php"); ?>

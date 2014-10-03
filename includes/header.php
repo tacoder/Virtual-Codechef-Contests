@@ -23,6 +23,7 @@
 	</div>
 	
 	<div  id="maincontent">
+		<div id="problem-content">
 		<?php 
 		function inProgress($code){
 			return true;

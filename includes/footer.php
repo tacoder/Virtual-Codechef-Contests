@@ -12,8 +12,8 @@ if($url[4] != "index.php")
 	$data = $qres->fetch_assoc();
 	$handle = $data['handle'];
 	/*echo $_SERVER["PHP_SELF"]; */
-	echo '<a href="http://www.codechef.com/submit/'.substr($url[4], 0, -4).'" target="_BLANK"><div id="submitButton">Submit</div></a>';
-	echo '<a href="http://www.codechef.com/status/'.substr($url[4], 0, -4).','.$handle.'" target="_BLANK"><div id="submitButton">My submissions</div></a>';
+	echo '</div><div id="submitButton" style="display:block"><a id="submitLink" href="http://www.codechef.com/submit/'.substr($url[4], 0, -4).'" target="_BLANK">Submit</a>';
+	echo '<a id="submitLink" href="http://www.codechef.com/status/'.substr($url[4], 0, -4).','.$handle.'" target="_BLANK">My submissions</a></div>';
 	}?>
 	</div>
 </body>
