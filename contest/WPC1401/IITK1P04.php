@@ -67,8 +67,7 @@ Output T lines each containing a single integer corresponding to the maximum ele
             <td><a href="/users/"></a></td>
 		</tr>
 								
-		                
-        		<tr>
+		        		<tr>
             <td width="14%">Date Added:</td>
             <td>30-09-2014</td>
         </tr>
@@ -82,6 +81,6 @@ Output T lines each containing a single integer corresponding to the maximum ele
         </tr>
         <tr>
             <td width="14%">Languages:</td>
-            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.8.1, CPP11, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAR, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.1.2, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>
+            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.8.1, CPP11, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.1.2, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>
         </tr>
     </table><?php require("../../includes/footer.php"); ?>

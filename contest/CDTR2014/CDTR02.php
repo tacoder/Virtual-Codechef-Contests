@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Inversion Probability</h1><?php require("../../includes/footer.php"); ?>

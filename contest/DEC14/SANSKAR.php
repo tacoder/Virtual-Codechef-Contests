@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Alok-nath and His Sanskars</h1><?php require("../../includes/footer.php"); ?>

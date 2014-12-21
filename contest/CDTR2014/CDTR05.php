@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Arrow and Vertigo</h1><?php require("../../includes/footer.php"); ?>

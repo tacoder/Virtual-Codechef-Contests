@@ -28,16 +28,27 @@
 	
 	require("includes/connect.php");
 		if(!mysqli_select_db($con, "users")){
+			if(!mysqli_query($con,"create database users")){
+				echo "Cannot create database!!".mysqli_error($con);
+				die();
+			}	
+		}
+	/*	if(!mysqli_select_db($con, "users")){
 			echo json_encode(array('errcode' => 1));
 			// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
 			//echo "Cannot open database!!".mysqli_error($con)."<br />";
 			die();
 		}
-		
+	*/	
 	function userExists($usern){
 		global $con;
 		if(($usern=="")) return true;
 		$query = mysqli_query($con,'select * from logininfo where username="'.$con->real_escape_string($usern).'";');
+		if(!$query)
+			if(mysqli_errno($con) == 1146){
+				mysqli_query($con,"create table logininfo (username varchar(20), password varchar(225), handle varchar(14) );");
+				$query = mysqli_query($con,'select * from logininfo where username="'.$con->real_escape_string($usern).'";');
+			}
 		return (!is_null(($query->fetch_assoc())));
 	}
 
@@ -70,7 +81,7 @@
 		$handleMatch = preg_match('/^[a-z]{1}[a-z0-9_]{3,13}$/',$_POST['handle']);
 
 		$u = $con->real_escape_string($_POST['username']);
-		$p = password_hash($con->real_escape_string($_POST['password']),PASSWORD_BCRYPT);
+		$p = password_hash($con->real_escape_string($_POST['password']),PASSWORD_DEFAULT);
 		$h = $con->real_escape_string($_POST['handle']);
 
 		if(($validUsername == 0) && $passwordsMatch && !$passwordsempty && !$handleEmpty && $handleMatch && !$passwordNotLongEnough){
@@ -91,6 +102,11 @@
 	?>
 	<div id="form-wrapper">
 		<form name="register-form" action="register.php" onsubmit="return validateForm()" method="POST">
+			<?php 
+			/* echo $_POST['username'];
+			echo $_POST['password'];
+			echo $_POST['confirm_password'];
+			echo $_POST['handle']; */ ?>
 			Username<span id="usernameconfirm">
 			<?php 
 				if($dataEntered){
@@ -99,8 +115,8 @@
 	 								"Username already registered",
 	 								"Username must contain alphanumeric charachters (a-z,A-Z,0-9).",
 	 								"Username must be less than or equal to 20 charachters.");
-				if(!($validUsername == 0))
-					echo $wrong.'<span class="formError">'.$usererror[$validUsername].'</span>';
+				//if(!($validUsername == 0))
+				//	;//echo $wrong.'<span class="formError">'.$usererror[$validUsername].'</span>';
 			}
 			?>
 			</span><br /><input type="text" name="username" id="username"><br />

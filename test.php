@@ -1,7 +1,8 @@
 
 <?php
-if(isset($_POST['code'])) {
-	echo $_POST['code'];
+if(isset($_GET['code'])) {
+	echo "yes";
+	echo $_GET['code'];
 }
 
 /*

@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Chef and Power of 2</h1><?php require("../../includes/footer.php"); ?>

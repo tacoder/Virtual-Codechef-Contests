@@ -1,12 +1,13 @@
-
-
-
 <?php
 require('includes/simple_html_dom.php');
 require('includes/connect.php');
 set_time_limit (0);
 if(!mysqli_select_db($con, "contests")){
-	echo "Cannot open database!!".mysqli_error($con);
+	if(!mysqli_query($con,"create database contests")){
+		echo "Cannot create database!!".mysqli_error($con);
+		die();
+	}
+	
 }
 
 function isLeap($year){
@@ -84,7 +85,8 @@ function add_index($code){
 	fwrite($file,'<?php require("../../includes/footer.php"); ?>');
 }
 function add_contest($code){
-	mkdir("contest/".$code, 0777, true);
+	if(!isset($_GET['fast']))
+		mkdir("contest/".$code, 0777, true);
 	global $con;
 	$contPage=file_get_html('http://www.codechef.com/'.$code);
 	
@@ -96,7 +98,8 @@ function add_contest($code){
 					$pcode= $con->real_escape_string($tr->children(1)->plaintext);
 					$succsub= $tr->children(2)->plaintext;
 					$acc= $tr->children(3)->plaintext;
-					add_problem($pcode,$code,$name);
+					if(!isset($_GET['fast']))
+						add_problem($pcode,$code,$name);
 					if(mysqli_query($con,"insert into ".$code." values('".$name."','".$pcode."','".$succsub."','".$acc."');")){
 						echo "Elements inserted into ".$code."('".$name."','".$pcode."','".$succsub."','".$acc."')";
 					} else {
@@ -112,6 +115,7 @@ function add_contest($code){
 		echo "Error Creating table ".$code.":".mysqli_error($con)."<br />";
 	}
 	// ---  add contest pages...
+	flush();
 }
 
 $tstart = time() ;
