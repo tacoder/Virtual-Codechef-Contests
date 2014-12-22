@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Barcode</h1><?php require("../../includes/footer.php"); ?>

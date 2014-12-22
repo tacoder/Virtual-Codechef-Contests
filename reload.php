@@ -2,13 +2,37 @@
 require('includes/simple_html_dom.php');
 require('includes/connect.php');
 set_time_limit (0);
+$tstart = time() ;
+echo "Parsing started at:".$tstart;
+
 if(!mysqli_select_db($con, "contests")){
-	if(!mysqli_query($con,"create database contests")){
+	if(!mysqli_query($con,"create database contests;")){
 		echo "Cannot create database!!".mysqli_error($con);
 		die();
+	} else {
+		mysqli_select_db($con, "contests");
 	}
 	
 }
+
+if(!mysqli_query($con,'select 1 from list')){
+	mysqli_query($con,'CREATE TABLE list(code varchar(20) not null,name varchar(200) not null primary key,start bigint not null,end bigint not null);');
+}
+
+$log = fopen("test.txt","a+");
+fseek($log,0);
+
+while(!feof($log)){
+	$sqlq = fgets($log);
+	if($sqlq == "") continue;
+	if(mysqli_query($con,$sqlq)){
+		echo "Successful query: ".$sqlq."<br />";
+	} else {
+		echo "Unsuccessful query: ".$sqlq." : ".mysqli_error($con)."<br />";
+	}
+}
+
+fseek($log, 0, SEEK_END);
 
 function isLeap($year){
 	return ($year % 4 == 0)&&($year%100!=0||$year%400==0);
@@ -85,12 +109,14 @@ function add_index($code){
 	fwrite($file,'<?php require("../../includes/footer.php"); ?>');
 }
 function add_contest($code){
+	global $log;
 	if(!isset($_GET['fast']))
 		mkdir("contest/".$code, 0777, true);
 	global $con;
 	$contPage=file_get_html('http://www.codechef.com/'.$code);
-	
-	if(mysqli_query($con,"CREATE TABLE ".$code."( name varchar(100), code varchar(15) unique key, SuccSub int, Accuracy decimal(4,2));")){
+	$sqlq = "CREATE TABLE ".$code."( name varchar(100), code varchar(15) unique key, SuccSub int, Accuracy decimal(4,2));\n";	
+	fwrite($log, $sqlq);
+	if(mysqli_query($con,$sqlq)){
 		foreach($contPage->find('div[class="table-questions"]') as $div){
 			foreach($div->find('table[class="problems"]') as $table){
 				foreach($table->find('tr[class=problemrow]') as $tr){
@@ -98,17 +124,21 @@ function add_contest($code){
 					$pcode= $con->real_escape_string($tr->children(1)->plaintext);
 					$succsub= $tr->children(2)->plaintext;
 					$acc= $tr->children(3)->plaintext;
+
 					if(!isset($_GET['fast']))
 						add_problem($pcode,$code,$name);
-					if(mysqli_query($con,"insert into ".$code." values('".$name."','".$pcode."','".$succsub."','".$acc."');")){
-						echo "Elements inserted into ".$code."('".$name."','".$pcode."','".$succsub."','".$acc."')";
+						
+					$sqlq = "insert into ".$code." values('".$name."','".$pcode."','".$succsub."','".$acc."');\n";	
+					fwrite($log, $sqlq);
+					if(mysqli_query($con,$sqlq)){
+						echo "Elements inserted into ".$code."('".$name."','".$pcode."','".$succsub."','".$acc."')<br />";
 					} else {
 						echo "Error inserting into table: " . mysqli_error($con);
 					}
-					echo "<br />";
 				}
 			}
 		}
+		if(!isset($_GET['fast']))
 		add_index($code);
 	}
 	else{
@@ -118,11 +148,13 @@ function add_contest($code){
 	flush();
 }
 
-$tstart = time() ;
-echo "Parsing started at:".$tstart;
-if(!mysqli_query($con,'select 1 from lists')){
-	mysqli_query($con,'CREATE TABLE list(code varchar(20) not null,name varchar(200) not null primary key,start bigint not null,end bigint not null);');
-}
+
+$query = mysqli_query($con,'select max(end) from list;');
+$arr = mysqli_fetch_assoc($query);
+if( ! is_null($arr) )
+	$tmin = $arr['max(end)'];
+else
+	$tmin = 0;
 $html=file_get_html('http://www.codechef.com/contests');
 foreach($html->find('div[id="statusdiv"]') as $div){
 	foreach($div->find('table') as $table){
@@ -133,19 +165,24 @@ foreach($html->find('div[id="statusdiv"]') as $div){
 			$name =  $con->real_escape_string($tr->children(1)->plaintext);
 			$start = toUnix($tr->children(2)->plaintext);
 			$end = toUnix($tr->children(3)->plaintext);
-			if($end < $tstart)
-				if(mysqli_query($con,"insert into list values('".$code."','".$name."','".$start."','".$end."');")){
-					echo "Elements inserted into list('".$code."','".$name."','".$start."','".$end."')";
+			$sqlq = "insert into list values('".$code."','".$name."','".$start."','".$end."');\n";
+			if( $end < $tstart && $end > $tmin){
+				if(mysqli_query($con,$sqlq)){
+					fwrite($log, $sqlq);
+					echo "Elements inserted into list('".$code."','".$name."','".$start."','".$end."')<br />";
 					add_contest($code);
 				} else {
 					echo "Error inserting into table: " . mysqli_error($con);
 				}
-				echo "<br />";
+			}
+			
 			}
 		}
 	}                         
 }
 $tend = time();
+
+
 echo "Parsing started at:".$tend;
 echo "<br />";
 echo "Total Time taken =".($tend-$tstart);

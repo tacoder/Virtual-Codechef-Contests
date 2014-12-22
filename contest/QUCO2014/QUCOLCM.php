@@ -1,0 +1,1 @@
+<?php require("../../includes/header.php"); ?><h1>Lights Camera Mayhem!</h1><?php require("../../includes/footer.php"); ?>
