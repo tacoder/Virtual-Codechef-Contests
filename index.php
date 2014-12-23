@@ -59,8 +59,18 @@
 	}
 	else{
 		//echo "Hello and welcome to this website!!";
-		echo '<div id = "main-content-wrapper">
-		<div id = "left"><img src = "biglogo.jpg" /><div id = "quote">Eat. Pray. Code.</div></div>
+		echo 
+	'
+<div id = "main-content-wrapper-outer">
+	<div id = "main-content-wrapper">
+
+		<div id = "left">
+			<img src = "biglogo.jpg" />
+			<div if="quote-wrapper">
+				<span id = "quote">Eat. Pray. Code.</span>
+			</div>
+		</div>
+
 		<div id = "right">
 			<div id = "form-wrapper">
 				<form name="login-form" action="login.php" method="post">
@@ -72,7 +82,7 @@
 					</fieldset>
 				</form>
 				<span>Or</span>
-				<form name="register-form" action="register.php" onsubmit="return validateForm()" method="POST">
+				<form id="regform" name="register-form" action="register.php" onsubmit="return validateForm()" method="POST">
 					<fieldset>
 						<legend>Register</legend>
 						<input type="text" name="username" id="username" placeholder="Username "><br />
@@ -85,11 +95,10 @@
 			</div>
 		</div>
 		
-	</div>';
+	</div>
+</div>';
 	}
 	?>
-<div id="footer">asdfasdf</div>
-	
 	</div>
 	</body>
 
