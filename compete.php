@@ -19,8 +19,24 @@
 
 	
 	<div  id="compete">
-		<div id="search-wizard"><form><input type="text" name="query" /><select name="catergory"><option value="ALL" selected>ALL</option><option value="Long challenges">Long challenges</option><option value="Lunch time">Lunch time</option></select><input type="submit" value="Go!" /></form></div>
+		<div id="search-wizard">
+			<form
+				><input type="text" name="query" placeholder="Search..."/
+				><select name="catergory"
+					><option value="ALL" selected>ALL</option
+					><option value="Long challenges">Long challenges</option
+					><option value="Lunch time">Lunch time</option
+				></select
+				><input type="submit" value="Go!" /
+			></form
+			>
+			<div id="search-results">
+				<div class="result" id="code">
+					
+				</div>
+			</div>
 		</div>
+	</div>
 	<!--<p>Select a contest</p>
 	
 	<form name="login-form" action="refer.php" method="post">

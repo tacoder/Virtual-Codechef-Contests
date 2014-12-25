@@ -16,13 +16,12 @@ body{
 }
 
 #search-wizard{
-	top: 80px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
+    margin: 1%;
 	padding:20px ;
+    width: 98%;
 	background-color: #321;
 	position: absolute;
+    box-shadow: 0px 0px 15px 0px #000;
 }
 
 
@@ -76,18 +75,18 @@ input[type="submit"]:active{
 }
 
 #search-wizard form input[name="query"]{
-	margin: 2%;
-	width :58%;
+	margin: 0.5%;
+	width :59%;
 }
 
 #search-wizard form input[type="submit"]{
-	margin: 2%;
-	width :auto;
+	margin: 0.5%;
+	width :9%;
 }
 
 #search-wizard form select{
-	margin: 2%;
-	width :28%;
+	margin: 0.5%;
+	width :29%;
 }
 
 *{
@@ -96,4 +95,16 @@ input[type="submit"]:active{
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
+    /*margin: 0px !important;
+    padding: 0px !important;
+    border-width: 0px !important;*/
+}
+
+#search-results{
+    position: relative;
+    color:black;
+    width:99%;
+    margin: 0.5%;
+    background-color: white;
+    
 }

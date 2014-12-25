@@ -60,43 +60,42 @@
 	else{
 		//echo "Hello and welcome to this website!!";
 		echo 
-	'
-<div id = "main-content-wrapper-outer">
-	<div id = "main-content-wrapper">
+		'<div id = "main-content-wrapper-outer">
+			<div id = "main-content-wrapper">
 
-		<div id = "left">
-			<img src = "biglogo.jpg" />
-			<div if="quote-wrapper">
-				<span id = "quote">Eat. Pray. Code.</span>
-			</div>
-		</div>
+				<div id = "left">
+					<img src = "biglogo.jpg" />
+					<div if="quote-wrapper">
+						<span id = "quote">Eat. Pray. Code.</span>
+					</div>
+				</div>
 
-		<div id = "right">
-			<div id = "form-wrapper">
-				<form name="login-form" action="login.php" method="post">
-					<fieldset>
-						<legend>Log In</legend>
-						<input type="text" name="username" id="username" placeholder = "Username"><br />
-						<input type="password" name="password" placeholder ="Password"><br />
-						<input type="submit" value="Log In">
-					</fieldset>
-				</form>
-				<span>Or</span>
-				<form id="regform" name="register-form" action="register.php" onsubmit="return validateForm()" method="POST">
-					<fieldset>
-						<legend>Register</legend>
-						<input type="text" name="username" id="username" placeholder="Username "><br />
-						<input type="password" name="password" placeholder="Password "><br />
-						<input type="password" name="confirm_password" placeholder="Confirm Password"><br />
-						<input type="text" name="handle" placeholder="Codechef Handle"><br />
-						<input type="submit" value="Register">
-					</fieldset>
-				</form>
+				<div id = "right">
+					<div id = "form-wrapper">
+						<form name="login-form" action="login.php" method="post">
+							<fieldset>
+								<legend>Log In</legend>
+								<input type="text" name="username" id="username" placeholder = "Username"><br />
+								<input type="password" name="password" placeholder ="Password"><br />
+								<input type="submit" value="Log In">
+							</fieldset>
+						</form>
+						<span>Or</span>
+						<form id="regform" name="register-form" action="register.php" onsubmit="return validateForm()" method="POST">
+							<fieldset>
+								<legend>Register</legend>
+								<input type="text" name="username" id="username" placeholder="Username "><br />
+								<input type="password" name="password" placeholder="Password "><br />
+								<input type="password" name="confirm_password" placeholder="Confirm Password"><br />
+								<input type="text" name="handle" placeholder="Codechef Handle"><br />
+								<input type="submit" value="Register">
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				
 			</div>
-		</div>
-		
-	</div>
-</div>';
+		</div>';
 	}
 	?>
 	</div>
