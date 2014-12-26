@@ -9,6 +9,7 @@
 	<link rel="icon" href="favicon.ico" type="../image/x-icon"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="includes/topnav.js"></script>
+	<script src="includes/compete.js"></script>
 </head>
 
 <body>
@@ -30,10 +31,16 @@
 				><input type="submit" value="Go!" /
 			></form
 			>
-			<div id="search-results">
-				<div class="result" id="code">
-					
+			<div id="search-result-container">
+				<a href="http://www.codechef.com/KGP14ROS/">
+					<div class="search-result" id="code">
+						<span>	Skit Online Programming Contest - Swami Keshvanand Institute of Technology, Management and gramothan</span>
+					</div>
+				</a>
+				<div class="search-result" id="code">
+					<span>ACM-ICPC Asia-Amritapuri Onsite Contest 2014, Replay</span>
 				</div>
+
 			</div>
 		</div>
 	</div>

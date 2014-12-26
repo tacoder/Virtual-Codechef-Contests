@@ -151,7 +151,8 @@ function add_contest($code){
 
 $query = mysqli_query($con,'select max(end) from list;');
 $arr = mysqli_fetch_assoc($query);
-if( ! is_null($arr) )
+
+if( mysql_num_rows($query) != 0 )
 	$tmin = $arr['max(end)'];
 else
 	$tmin = 0;
@@ -181,6 +182,13 @@ foreach($html->find('div[id="statusdiv"]') as $div){
 	}                         
 }
 $tend = time();
+
+$jsList = fopen("includes/compete.js","w+");
+
+$query = mysqli_query($con,"select code,name,end from list");
+$resultArray = mysqli_fetch_assoc($query);
+
+
 
 
 echo "Parsing started at:".$tend;
