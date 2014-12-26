@@ -19,13 +19,15 @@ $query = mysqli_query($con,"select code,name,end from list");
 
 //print_r($resultArray);
 
-
+fwrite($jsList, "var contests=Array(");
 
 while ($row = mysqli_fetch_assoc($query)) {
-        
-        echo "Code: ".$row["code"]."<br />";
-        echo "Name: ".$row["name"]."<br />";
-        echo "end".$row["end"]."<br />";
-    }
+    fwrite($jsList, 'Array("'.$row["name"].'","'.$row["code"].'","'.$row["end"].'"),'."\n");
+    echo "Code: ".$row["code"]."<br />";
+    echo "Name: ".$row["name"]."<br />";
+    echo "end".$row["end"]."<br />";
+}
+
+fwrite($jsList, ");");
 
 ?>
