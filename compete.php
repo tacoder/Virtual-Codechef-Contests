@@ -21,26 +21,17 @@
 	
 	<div  id="compete">
 		<div id="search-wizard">
-			<form
-				><input type="text" name="query" placeholder="Search..."/
+			<form id="search-form"
+				><input type="text" name="query" placeholder="Search..."/ 
 				><select name="catergory"
 					><option value="ALL" selected>ALL</option
 					><option value="Long challenges">Long challenges</option
 					><option value="Lunch time">Lunch time</option
 				></select
-				><input type="submit" value="Go!" /
-			></form
+				><input type="submit" value="Go!" 
+			/></form
 			>
 			<div id="search-result-container">
-				<a href="http://www.codechef.com/KGP14ROS/">
-					<div class="search-result" id="code">
-						<span>	Skit Online Programming Contest - Swami Keshvanand Institute of Technology, Management and gramothan</span>
-					</div>
-				</a>
-				<div class="search-result" id="code">
-					<span>ACM-ICPC Asia-Amritapuri Onsite Contest 2014, Replay</span>
-				</div>
-
 			</div>
 		</div>
 	</div>
