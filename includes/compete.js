@@ -355,18 +355,33 @@ Array("WYSIWYG 2012","ANWS2012","1330214400"),
 Array("Xception 1.0","XCEP2014","1418256000"),
 Array("ZERO1","ZERO1","1353168000")
 );
+function searchTerm(){
+        console.log("sedarch called");
+        var term = $("#search-form input[type='text']").val();
+        var Category = $("#search-form select").val();
+        for (contest of contests){ 
+            var str=contest[0]
+            if(str.search('/'+term+'/')){
+                console.log("Concluded true for "+contest[0]);
+                document.getElementById(contest[1]).style.display = "block";
+            } else {
+                document.getElementById(contest[1]).style.display = "none";    
+            }
+            
+        }
+
+    }
+
  $(document).ready(function() {
     for (contest of contests){
         var end = new Date(parseInt(contest[2])*1000);
         var newdiv = document.createElement("a");
         newdiv.setAttribute("href","refer.php?code'"+contest[1]);
         newdiv.innerHTML='<div class="search-result" id="'+contest[1]+'"><div class="search-result-name">'+contest[0]+'</div><div class="search-result-end">'+end.toDateString()+'</div></div>'
-        document.getElementById("search-result-container").appendChild(newdiv) 
+        document.getElementById("search-result-container").appendChild(newdiv) ;
     }
 
-    function search(){
-        console.log("clickedede");
-    }
+    
 
     $("#search-form").submit(function(event){
         search();
@@ -374,11 +389,11 @@ Array("ZERO1","ZERO1","1353168000")
     });
 
     $("#search-form input[type='text']").keypress(function(){
-        search();
+        searchTerm();
     });
     
     $("#search-form select").change(function(){
-        search();
+        searchSelect();
     });
 
 }); 

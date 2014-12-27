@@ -22,10 +22,10 @@
 	<div  id="compete">
 		<div id="search-wizard">
 			<form id="search-form"
-				><input type="text" name="query" placeholder="Search..."/ 
-				><select name="catergory"
+				><input type="text" name="query" placeholder="Search..."
+				/><select name="catergory"
 					><option value="ALL" selected>ALL</option
-					><option value="Long challenges">Long challenges</option
+					><option value="Long">Long challenges</option
 					><option value="Lunch time">Lunch time</option
 				></select
 				><input type="submit" value="Go!" 
