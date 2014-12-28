@@ -163,7 +163,7 @@ foreach($html->find('div[id="statusdiv"]') as $div){
 			if($tr->class!="headerrow")
 			{
 			$code =  $con->real_escape_string($tr->children(0)->plaintext);
-			$name =  $con->real_escape_string($tr->children(1)->plaintext);
+			$name =  trim($con->real_escape_string($tr->children(1)->plaintext));
 			$start = toUnix($tr->children(2)->plaintext);
 			$end = toUnix($tr->children(3)->plaintext);
 			$sqlq = "insert into list values('".$code."','".$name."','".$start."','".$end."');\n";
