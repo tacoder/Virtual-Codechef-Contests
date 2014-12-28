@@ -28,6 +28,8 @@ while ($row = mysqli_fetch_assoc($query)) {
     echo "end".$row["end"]."<br />";
 }
 
+
+fseek($jsList,-2,SEEK_CUR);
 fwrite($jsList, ");");
 
 fwrite($jsList,'function searchTerm(){
