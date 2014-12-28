@@ -358,18 +358,26 @@ Array("ZERO1","ZERO1","1353168000")
 function searchTerm(){
         console.log("sedarch called");
         var term = $("#search-form input[type='text']").val();
-        var Category = $("#search-form select").val();
+        var category = $("#search-form select").val();
+        console.log("term = :"+term);
+        console.log("category = :"+category);
+
         for (contest of contests){ 
-            var str=contest[0]
-            if(str.search('/'+term+'/')){
-                console.log("Concluded true for "+contest[0]);
+            var str=contest[0];
+            var regexp = new RegExp(term);
+            var test = str.search(regexp);
+            console.log("regexp="+regexp);
+            //console.log("test="+test);
+            //console.log("str="+str);
+
+            if(test != -1){
+                console.log("Concluded true for "+contest[0]+" where term = "+term);
                 document.getElementById(contest[1]).style.display = "block";
             } else {
+                //console.log("Concluded false for "+contest[0]+" where term = "+term);
                 document.getElementById(contest[1]).style.display = "none";    
-            }
-            
+            }   
         }
-
     }
 
  $(document).ready(function() {
@@ -388,7 +396,7 @@ function searchTerm(){
         event.preventDefault();
     });
 
-    $("#search-form input[type='text']").keypress(function(){
+    $("#search-form input[type='text']").keyup(function(){
         searchTerm();
     });
     
