@@ -364,7 +364,7 @@ Array("ZERO1","ZERO1","1353168000"));function searchTerm(){
 
         for (contest of contests){ 
             var str=contest[0];
-            var regexp = new RegExp(term);
+            var regexp = new RegExp(term,"i");
             var test = str.search(regexp);
             console.log("regexp="+regexp);
             //console.log("test="+test);
