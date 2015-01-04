@@ -10,4 +10,20 @@ if(mysqli_connect_errno()){
 else{
 	//echo "connection successful!!";
 }
+
+function selectOrCreateDatabase($db,$die = true){
+    global $con;
+    if(!mysqli_select_db($con, $db)){
+        if(!mysqli_query($con,"create database ".$db.";")){
+            echo "Cannot create database!!".mysqli_error($con);
+            if($die == true)
+                die();
+        } else {
+            mysqli_select_db($con, $db);
+        }
+        
+    }
+    return $con;
+}
+
 ?>
