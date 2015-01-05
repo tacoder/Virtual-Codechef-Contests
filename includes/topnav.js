@@ -1,9 +1,11 @@
 $(document).ready(function(){
-
+    var dur = 130;
 	$('.topnavright').hover(function(){
-		$("#logInBox").fadeIn();
+		$("#logInBox").fadeIn(dur);
 	});
-	$('#maincontent,#sidenav').hover(function(){
-		$("#logInBox").fadeOut();
-	});
+	
+    $("#main-content-wrapper,#maincontent,#front,#search-wizard,#sidenav").hover(function(){
+        $("#logInBox").fadeOut(dur);
+    });
+
 });
