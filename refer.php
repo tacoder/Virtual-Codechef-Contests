@@ -2,13 +2,11 @@
 <?php
 session_start();
 if(isset($_GET['code']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
-	require("includes/connect.php");
+	require_once("includes/connect.php");
 	if(!mysqli_select_db($con, "contests")){
-			echo json_encode(array('errcode' => mysqli_errno($con)));
-			// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
-			//echo "Cannot open database!!".mysqli_error($con)."<br />";
-			die();
-		}
+		echo json_encode(array('errcode' => mysqli_errno($con)));
+		die();
+	}
 
 	$query = mysqli_query($con,'select count(*) from '.$con->real_escape_string($_GET['code']));
 	$arr = mysqli_fetch_assoc($query);

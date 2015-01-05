@@ -2,7 +2,7 @@
 $url = explode('/',$_SERVER["PHP_SELF"]);
 if($url[4] != "index.php") 
 {
-  require("connect.php");
+  require_once("connect.php");
 	if(!mysqli_select_db($con, "users")){
 		echo "Cannot open database!!".mysqli_error($con)."<br />";
 		die("Tell my wife i love her.");

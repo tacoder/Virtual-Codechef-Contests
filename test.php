@@ -1,5 +1,5 @@
 <?php 
-require('includes/connect.php');
+require_once('includes/connect.php');
 set_time_limit (0);
 $tstart = time();
 echo "Parsing started at:".$tstart."<br />";

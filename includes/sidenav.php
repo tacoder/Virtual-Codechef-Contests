@@ -12,7 +12,7 @@
 	foreach( $result as $row ){
 	   $c = $row['code'];
 	   $r = $row['name'];
-	   echo  '<div class="sidenavlink"><a href="contest/'.$con->real_escape_string($url[3]).'/'.$c.'.php" >'.$r.'</a></div>';
+	   echo  '<div class="sidenavlink" title="'.$row['name'].'"><a href="contest/'.$con->real_escape_string($url[3]).'/'.$c.'.php" >'.$r.'</a></div>';
 	} 
   }
 

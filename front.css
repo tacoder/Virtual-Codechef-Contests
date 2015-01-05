@@ -44,7 +44,8 @@ body{
 
 #left img{
 	margin:25%;
-	
+	margin-bottom: 5%;	
+	margin-top: 10%;
 	max-width:50%;
 	max-height: 50%;
 	box-shadow: 0px 0px 45px 3px #000;
@@ -88,7 +89,6 @@ body{
 	display: block;
 	width:75%;
 	margin:0 auto;
-	padding:1%;
 	font-family:Verdana;
 	color: #321;
 	background-color: #fe9900;
@@ -101,8 +101,8 @@ body{
 	font-style: italic;
 	border:5px solid #975a01;
 	box-shadow: 0px 0px 15px 0px #000;
-	margin-bottom: 10%;
 	background: url('topnav.png') repeat;
+	box-sizing:border-box;
 }
 
 input{

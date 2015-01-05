@@ -26,7 +26,7 @@
 		$_SESSION['count']++; 
 	echo $_SESSION['count'];
 	
-	require("includes/connect.php");
+	require_once("includes/connect.php");
 		if(!mysqli_select_db($con, "users")){
 			if(!mysqli_query($con,"create database users")){
 				echo "Cannot create database!!".mysqli_error($con);

@@ -54,8 +54,8 @@ echo "<br />";
 if(isset($_GET['ccode'],$_SESSION['username'])){
 	$ccode = $_GET['ccode'];
 	$timeout = 3;
-	require('includes/simple_html_dom.php');
-	require("includes/connect.php");
+	require_once('includes/simple_html_dom.php');
+	require_once("includes/connect.php");
 	if(!mysqli_select_db($con, "users")){
 			echo mysqli_errno($con);
 			// --- If error occurs here, Add functionality to log the error rather than displaying it to the user

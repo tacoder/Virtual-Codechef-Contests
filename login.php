@@ -32,7 +32,7 @@
 		// ---- Check if user is already logged in.
 		if(isset($_POST['username']) && isset($_POST['password']) )
 		{
-			require("includes/connect.php");
+			require_once("includes/connect.php");
 			if(!mysqli_select_db($con, "users")){
 				echo "Cannot open database!!".mysqli_error($con)."<br />";
 				die("Tell my wife i love her.");

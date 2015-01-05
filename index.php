@@ -23,7 +23,7 @@
 
 	<?php 
 	if(isset($_SESSION['username'])){
-		require("includes/connect.php");
+		require_once("includes/connect.php");
 		if(!mysqli_select_db($con, "users")){
 				echo mysqli_errno($con);
 				// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
@@ -64,10 +64,10 @@
 			<div id = "main-content-wrapper">
 
 				<div id = "left">
-					<img src = "biglogo.jpg" />
-					<div if="quote-wrapper">
-						<span id = "quote">Eat. Pray. Code.</span>
-					</div>
+					<img src = "biglogo.jpg" 
+					/><div if="quote-wrapper"
+					><span id = "quote">Eat. Pray. Code.</span
+					></div>
 				</div>
 
 				<div id = "right">

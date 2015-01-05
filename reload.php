@@ -15,8 +15,8 @@
  *  simple_html_dom.php helps parsing of html documents
  *  connect.php connects to mysql database and includes helper functions.
  */
-require('includes/simple_html_dom.php');
-require('includes/connect.php');
+require_once('includes/simple_html_dom.php');
+require_once('includes/connect.php');
 
 // Set time limit of script to infinity
 set_time_limit (0);
@@ -186,7 +186,7 @@ function add_problem($pcode,$code,$name){
 		false, null,  -1, -1,  true, true,  DEFAULT_TARGET_CHARSET,false);
 	
 	$file = fopen("contest/".$code."/".$pcode.".php","w");
-	fwrite($file,'<?php require("../../includes/header.php"); ?>');
+	fwrite($file,'<?php require_once("../../includes/header.php"); ?>');
 	fwrite($file,"<h1>$name</h1>");
 	foreach($contPage->find('div[class="primary-col-wrapper"]') as $outerdiv){
 	  foreach($outerdiv->find('div[class="primary-colum-width-left"]') as $div){
@@ -217,7 +217,7 @@ function add_problem($pcode,$code,$name){
 	  }
 	}
 
-	fwrite($file,'<?php require("../../includes/footer.php"); ?>');
+	fwrite($file,'<?php require_once("../../includes/footer.php"); ?>');
 }
 
 /*
@@ -225,9 +225,9 @@ function add_problem($pcode,$code,$name){
  */
 function add_index($code){
 	$file = fopen("contest/".$code."/index.php","w");
-	fwrite($file,'<?php require("../../includes/header.php"); ?>');
-	fwrite($file,'<?php require("../../includes/all_problems.php"); ?>');
-	fwrite($file,'<?php require("../../includes/footer.php"); ?>');
+	fwrite($file,'<?php require_once("../../includes/header.php"); ?>');
+	fwrite($file,'<?php require_once("../../includes/all_problems.php"); ?>');
+	fwrite($file,'<?php require_once("../../includes/footer.php"); ?>');
 }
 
 /*

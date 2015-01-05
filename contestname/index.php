@@ -1,7 +1,7 @@
 <?php 
-require("../includes/header.php"); 
+require_once("../includes/header.php"); 
 ?>
 oh yeah look at this.
 <?php
-require("../includes/footer.php"); 
+require_once("../includes/footer.php"); 
 ?>

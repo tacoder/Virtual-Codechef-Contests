@@ -1,6 +1,6 @@
 <?php 
 
-require('includes/connect.php');
+require_once('includes/connect.php');
 
 if(!mysqli_select_db($con, "contests")){
     if(!mysqli_query($con,"create database contests;")){

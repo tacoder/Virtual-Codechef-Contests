@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 session_start();
 function userExists($usern){
 	if(($usern=="")) return true;
-	require("connect.php");
+	require_once("connect.php");
 	if(!mysqli_select_db($con, "users")){
 		echo json_encode(array('errcode' => 1));
 		// --- If error occurs here, Add functionality to log the error rather than displaying it to the user

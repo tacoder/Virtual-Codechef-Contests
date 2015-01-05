@@ -41,7 +41,7 @@
 	<select name = "code">
 		<option value = "BLANK" selected></option>
 		<?php
-			require("includes/connect.php");
+			require_once("includes/connect.php");
 			if(!mysqli_select_db($con, "contests")){
 				echo "Cannot open database!!".mysqli_error($con);
 			}

@@ -1,6 +1,6 @@
 <?php 
 if(isset($_GET['code'])){
-require("includes/connect.php");
+require_once("includes/connect.php");
 if(!mysqli_select_db($con, "contests")){
 	echo json_encode(array('errcode' => 1));
 	// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
