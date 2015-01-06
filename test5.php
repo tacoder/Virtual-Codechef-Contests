@@ -2,7 +2,7 @@
 
 
 <?php
- 
+$st = time();
 function multiRequest($data, $options = array()) {
  
   // array of curl handles
@@ -63,7 +63,7 @@ function multiRequest($data, $options = array()) {
 
  
 $data = array(
-	'http://www.codechef.com/status/CLETAB,tacoder',
+	'CLETAB'=>'http://www.codechef.com/status/CLETAB,tacoder',
 	'http://www.codechef.com/status/CRAWA,tacoder',
 	'http://www.codechef.com/status/EQUAKE,tacoder',
 	'http://www.codechef.com/status/MOU2H,tacoder',
@@ -76,6 +76,10 @@ $data = array(
 );
 $r = multiRequest($data);
  
-print_r($r);
+foreach ($r as $key => $value) {
+  echo $key."=>";
+  echo $value;
+}
  
+ echo time()-$st;
 ?>

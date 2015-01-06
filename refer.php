@@ -42,10 +42,13 @@ if(isset($_GET['code']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']
 		echo $ncols;
 		$ncols -= 7;
 		if((($ncols)/2) < $count)
-			for ($x=($ncols/2)+1; $x<=$count; $x++) {
+			for ($x=(intval(int$ncols/2))+1; $x<=$count; $x++) {
 	  		  echo "The number is: $x <br>";
 	  		  mysqli_query($con,"ALTER TABLE ".$_SESSION['username']." ADD s".$x." int;");
+	  		  echo mysqli_error($con);
 	  		  mysqli_query($con,"ALTER TABLE ".$_SESSION['username']." ADD p".$x." int;");
+	  		  echo mysqli_error($con);
+	  		  
 			} 
 			$qr = "insert into ".$_SESSION['username']." (contestname,contestcode,nproblems,start,end) values ('".$cname."','".$_GET['code']."',".$count.",".$curtime.",".($curtime+$duration).");";
 			echo $qr."<br />";
@@ -53,7 +56,7 @@ if(isset($_GET['code']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']
 		echo mysqli_error($con);
 	}
 	$_SESSION[$_GET['code']] = true;
-	header("location:contest/".$_GET['code']);
+	//header("location:contest/".$_GET['code']);
 }
 else{
 	header('Location: login.php?error=You+must+login+before+starting+a+contest');  

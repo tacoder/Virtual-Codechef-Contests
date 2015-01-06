@@ -42,10 +42,12 @@ function multiRequest($data, $options = array()) {
 	// all done
 	curl_multi_close($mh);
 	return $result;
-}
+} // end of multiRequest
+
 function returnError($errcode){
 	echo $errcode;
 }
+
 $st = time();
 echo "script started at:";
 echo $st;
