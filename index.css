@@ -4,11 +4,11 @@
 	
 }
 #maincontent{
-	
+	margin-left: 158px;
 	display: block;
     min-height:100%;
-    width: 85%;
-    float:right;
+    /*width: 85%;*/
+    float:left;
     /*bottom:0;*/
     padding:20px;
     padding-top:90px;
@@ -33,7 +33,7 @@
 	color:#959595;
 	font-weight: bold;
 	position: fixed;
-	width:15%;
+	width:158px;/*/15%;*/
     top: 0px;
     bottom: 0px;
 	float:left;
