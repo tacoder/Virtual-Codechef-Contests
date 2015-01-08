@@ -132,7 +132,6 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 
 $r = multiRequest($tofetch);
  
-echo '<pre>';
 print_r($r);
 				
 } else {
