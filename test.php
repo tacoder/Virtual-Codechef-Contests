@@ -1,4 +1,5 @@
 <?php 
+die();
 require_once('includes/connect.php');
 set_time_limit (0);
 $tstart = time();
@@ -47,7 +48,7 @@ function toUnix($str){
 
 $con = selectOrCreateDatabase("contests");
 
-$rlog = fopen("ranks.txt","a+");
+//$rlog = fopen("ranks.txt","a+");
 function add_contest_rankings($code){
     global $rlog;
     global $con;
