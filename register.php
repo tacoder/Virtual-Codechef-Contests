@@ -47,7 +47,7 @@
 		if(!$query)
 			if(mysqli_errno($con) == 1146){
 				mysqli_query($con,"create table logininfo (username varchar(20), password varchar(225), handle varchar(14) );");
-				$query = mysqli_query($con,'select * from logininfo where username="'.$con->real_escape_string($usern).'";');
+				return false;
 			}
 		return (!is_null(($query->fetch_assoc())));
 	}

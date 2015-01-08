@@ -58,47 +58,66 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 	$timeout = 3;
 	require_once('includes/simple_html_dom.php');
 	require_once("includes/connect.php");
-	if(!mysqli_select_db($con, "users")){
-			echo mysqli_errno($con);
-			// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
-			//echo "Cannot open database!!".mysqli_error($con)."<br />";
-			die();
-		}
-		$curtime = time();
-	$qr = 'select * from '.$con->real_escape_string($_SESSION['username']).' where end > '.$curtime.';';
+	selectOrCreateDatabase("users");
+
+	$curtime = time();
+	$qr = 'select * from '.$con->real_escape_string($_SESSION['username']).' where end > '.$curtime.' and contestcode = "'.$ccode.'";';
 	$query = mysqli_query($con,$qr);
-	$isSolving = false;
-	if(!empty($query))
-		while ($row = mysqli_fetch_assoc($query)) {
-	        if($row['contestcode'] == $ccode){
-	        	$isSolving = true;
-	        	break;
-	        }
-	    }
+	if(!$query){
+		echo "Unsuccessful query:".$qr."<br />";
+		echo "error num:".mysqli_errno($con).":::".mysqli_error($con);
+	}
+	if( $query->num_rows == 0 )
+		$isSolving = false;
+	else
+		$isSolving = true;
+
 	if(!$isSolving)
 		returnError("User is not solving this problem right now lol.");
-	if(!mysqli_select_db($con, "logs")){
-			echo mysqli_errno($con);
-			// --- If error occurs here, Add functionality to log the error rather than displaying it to the user
-			//echo "Cannot open database!!".mysqli_error($con)."<br />";
-			die();
-		}
+	selectOrCreateDatabase("logs");
 	$checkTime = $curtime - $timeout;
 	$qr = 'select * from updatelogs where time > '.$checkTime.' and username = "'.$_SESSION['username'].'";';
-	echo $qr."<br />";
 	$query = mysqli_query($con,$qr);
+	if(!$query){
+		echo "Unsuccessful query:".$qr."<br />";
+		echo "error num:".mysqli_errno($con).":::".mysqli_error($con);
+	}
+	if(mysqli_errno($con) == 1146){
+		$qr = "create table updatelogs (ip varchar(15),time bigint not null, username varchar(14),`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,    PRIMARY KEY  (`id`) ,    INDEX  (`id`) );";
+		$query = mysqli_query($con,$qr);
+		if(!$query){
+			echo "Unsuccessful query:".$qr."<br />";
+			echo "error:".mysqli_error($con);
+			die();
+		} else {
+			$qr = 'select * from updatelogs where time > '.$checkTime.' and username = "'.$_SESSION['username'].'";';
+			echo $qr."<br />";
+			$query = mysqli_query($con,$qr);
+			if(!$query){
+				echo "Unsuccessful query:".$qr."<br />";
+				echo "error:".mysqli_error($con);
+				die();
+			}
+		}
+
+	}	
+	
 	$rowcount = mysqli_num_rows($query);
 	if($rowcount == 0) {
-		echo "perfect query ";
-		//--- insert query.
+		echo "No request made ".$timeout." Seconds ago.<br />";
 	} else {
-		/*if(mysqli_errno($con) == 1062)*/
+		echo $rowcount;
 		echo "similar request happened less than ".$timeout." secs ago<br />";
+		die();
 	}
-	$qr = 'insert into updatelogs value ("'.$_SERVER['REMOTE_ADDR'] .'","'.$curtime.'","'.$_SESSION['username'].'")';
-	echo $qr."<br />";
+	$qr = 'insert into updatelogs(ip,time,username) value ("'.$_SERVER['REMOTE_ADDR'] .'","'.$curtime.'","'.$_SESSION['username'].'")';
 	$query = mysqli_query($con,$qr);
-	echo mysqli_error($con);
+	if(!$query){
+		echo "Unsuccessful query:".$qr."<br />";
+		echo "error:".mysqli_error($con);
+	} else {
+		echo "Successful query:".$qr."<br />";
+	}
 	if(!mysqli_select_db($con, "contests")){
 		echo "Cannot open database!!".mysqli_error($con);
 	}
