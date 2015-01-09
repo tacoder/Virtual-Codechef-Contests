@@ -30,9 +30,8 @@ while ($row = mysqli_fetch_assoc($query)) {
 
 
 fseek($jsList,-2,SEEK_CUR);
-fwrite($jsList, ");");
 
-fwrite($jsList,'function searchTerm(){
+fwrite($jsList,');function searchTerm(){
         console.log("sedarch called");
         var term = $("#search-form input[type=\'text\']").val();
         var category = $("#search-form select").val();
