@@ -26,7 +26,8 @@ $tstart = time();
 
 echo "Parsing started at:".$tstart;
 
-$con = selectOrCreateDatabase("rankings");
+
+$con = selectOrCreateDatabase("contests");
 
 //Create table list if it does not exist already.
 if(!mysqli_query($con,'select 1 from list')){
@@ -65,6 +66,21 @@ while(!feof($log)){
 }
 
 
+$con = selectOrCreateDatabase("rankings");
+
+while(!feof($rlog)){
+	$sqlq = fgets($rlog);
+
+	if($sqlq == "") continue;
+
+	if(mysqli_query($con,$sqlq)){
+		echo "Successful query: ".$sqlq."<br />";
+	} else {
+		echo "Unsuccessful query: ".$sqlq." : ".mysqli_error($con)."<br />";
+	}
+}
+
+$con = selectOrCreateDatabase("contests");
 /* Set seek to end so we can write any new queries made during the run of this 
  * script
  */
