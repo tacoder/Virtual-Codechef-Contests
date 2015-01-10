@@ -131,7 +131,8 @@ if(isset($_GET['ccode'],$_SESSION['username'])){
 	} 
 
 $r = multiRequest($tofetch);
- 
+$toReturn['iserror'] = false;
+
 print_r($r);
 				
 } else {

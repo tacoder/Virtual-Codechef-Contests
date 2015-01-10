@@ -68,7 +68,6 @@ while(!feof($log)){
 }
 
 
-$con = selectOrCreateDatabase("rankings");
 
 if(!isset($_GET['fast']))
 while(!feof($rlog)){
@@ -83,7 +82,6 @@ while(!feof($rlog)){
 	}
 }
 
-$con = selectOrCreateDatabase("contests");
 /* Set seek to end so we can write any new queries made during the run of this 
  * script
  */

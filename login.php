@@ -55,7 +55,7 @@
 		}
 		?></span>
 		<form name="login-form" action="login.php" method="post">
-			Username<br /><input type="text" name="username" id="username"><br />
+			Username<br /><input type="text" name="username" id="username" autofocus><br />
 			Password<br /><input type="password" name="password"><br />
 			<input type="submit" value="Log In">
 		</form>

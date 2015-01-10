@@ -75,7 +75,7 @@
 						<form name="login-form" action="login.php" method="post">
 							<fieldset>
 								<legend>Log In</legend>
-								<input type="text" name="username" id="username" placeholder = "Username"><br />
+								<input type="text" name="username" id="username" placeholder = "Username" autofocus><br />
 								<input type="password" name="password" placeholder ="Password"><br />
 								<input type="submit" value="Log In">
 							</fieldset>

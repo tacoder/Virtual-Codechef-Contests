@@ -119,7 +119,7 @@
 				//	;//echo $wrong.'<span class="formError">'.$usererror[$validUsername].'</span>';
 			}
 			?>
-			</span><br /><input type="text" name="username" id="username"><br />
+			</span><br /><input type="text" name="username" id="username" autofocus><br />
 			Password<span id="passwordconfirm">
 			<?php 
 			if($dataEntered){
