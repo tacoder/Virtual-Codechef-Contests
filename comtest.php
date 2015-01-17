@@ -60,7 +60,7 @@ fwrite($jsList,');function searchTerm(){
     for (contest of contests){
         var end = new Date(parseInt(contest[2])*1000);
         var newdiv = document.createElement("a");
-        newdiv.setAttribute("href","refer.php?code\'"+contest[1]);
+        newdiv.setAttribute("href","refer.php?code="+contest[1]);
         newdiv.innerHTML=\'<div class="search-result" id="\'+contest[1]+\'"><div class="search-result-name">\'+contest[0]+\'</div><div class="search-result-end">\'+end.toDateString()+\'</div></div>\'
         document.getElementById("search-result-container").appendChild(newdiv) ;
     }

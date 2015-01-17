@@ -134,7 +134,11 @@ $r = multiRequest($tofetch);
 $toReturn['iserror'] = false;
 
 print_r($r);
-				
+
+foreach ($r as $key => $value) {
+	
+}
+
 } else {
 	if(!isset($_SESSION['username']))
 		returnError("User not logged in.");
