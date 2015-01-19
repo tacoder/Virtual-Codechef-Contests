@@ -57,7 +57,7 @@ echo "script started at:";
 echo $st;
 echo "<br />";
 
-if(isset($_GET['ccode'],$_SESSION['username'],$_GET['ctype'])){
+if(isset($_GET['ccode'],$_SESSION['username'])){
 	$ccode = $_GET['ccode'];
 	$timeout = 3;
 	require_once('includes/simple_html_dom.php');
@@ -129,7 +129,8 @@ if(isset($_GET['ccode'],$_SESSION['username'],$_GET['ctype'])){
 	$result = $query->fetch_all( MYSQLI_ASSOC);
 	$tofetch = array();
 	foreach( $result as $row ){
-	   $tofetch[$row['code']]='http://www.codechef.com/status/'.$row['code'].','.$_SESSION['handle'].'';
+	   $tofetch[$row['code']]='http://www.codechef.com/status/'.$row['code'].','.$_SESSION['handle'].'?sort_by=All&sorting_order=asc&language=All&status=15&Submit=GO';
+	   //http://www.codechef.com/status/CHEFGR,tacoder?sort_by=All&sorting_order=asc&language=All&status=15&Submit=GO
 	   echo 'http://www.codechef.com/status/'.$row['code'].','.$_SESSION['handle'].'';
 	   echo '<br />';
 	} 
