@@ -3019,3 +3019,48 @@ insert into KGP14ROS values('Pilgrimage','KGP14H','5','62.5');
 insert into KGP14ROS values('BlindDate Contest','KGP14F','4','40');
 insert into KGP14ROS values('Irrigating Farms','KGP14I','1','100');
 insert into KGP14ROS values('Tour Planning','KGP14G','0','0');
+insert into list values('AMR14ROS','ACM-ICPC Asia-Amritapuri Onsite Contest 2014, Replay','1421258400','1421276400');
+CREATE TABLE AMR14ROS( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into AMR14ROS values('Matryoshka Dolls','AMR14D','259','54.08');
+insert into AMR14ROS values('Gabba sprint','AMR14I','52','13.99');
+insert into AMR14ROS values('Kiwi Number','AMR14E','35','11.35');
+insert into AMR14ROS values('Dhonis Bowlers','AMR14C','28','13.79');
+insert into AMR14ROS values('Road Decoration','AMR14B','6','13.33');
+insert into AMR14ROS values('Hugphile Order','AMR14G','3','9.09');
+insert into AMR14ROS values('Jersey Number','AMR14F','1','100');
+insert into AMR14ROS values('Afghan Jerseys','AMR14A','0','0');
+insert into AMR14ROS values('Opening Pair','AMR14H','0','0');
+insert into AMR14ROS values('Artist Rivalry','AMR14J','0','0');
+insert into list values('ARHN1502','Aarohan 2, 2014','1421042400','1421172000');
+CREATE TABLE ARHN1502( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into ARHN1502 values('AP-GP','ARHN01','977','47.71');
+insert into ARHN1502 values('Dhapu and Hamming Distance','ARHN07','841','60.1');
+insert into ARHN1502 values('Queries','ARHN09','776','59.48');
+insert into ARHN1502 values('Dhapu and the Big Sums','ARHN04','309','45.8');
+insert into ARHN1502 values('Card Game','ARHN08','223','44.2');
+insert into ARHN1502 values('Yalin Dictionary','ARHN10','220','59.54');
+insert into ARHN1502 values('Dhapu and Binary Numbers','ARHN06','113','18.88');
+insert into list values('JAN15','January Challenge 2015','1420210800','1421074800');
+CREATE TABLE JAN15( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into JAN15 values('Chef and Stones','CHEFSTON','6486','30.75');
+insert into JAN15 values('Sereja and Votes','SEAVOTE','4376','18.49');
+insert into JAN15 values('Gcd Queries','GCDQ','3608','14.53');
+insert into JAN15 values('One Dimensional Kingdoms','ONEKING','3088','20.28');
+insert into JAN15 values('Chef and A Large Permutation','CLPERM','2167','10.86');
+insert into JAN15 values('Sereja and Number Division 2','SEAND2','1654','67.81');
+insert into JAN15 values('Queries on the String','QSET','954','7.51');
+insert into JAN15 values('Sereja and LCM','SEALCM','393','15.73');
+insert into JAN15 values('Ranka','RANKA','308','23.81');
+insert into JAN15 values('Xor Queries','XRQRS','204','2.95');
