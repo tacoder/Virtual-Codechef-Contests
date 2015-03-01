@@ -151,6 +151,22 @@ foreach ($pages as $key => $value) {
 	          $toReturn['problems'][$key]['solved'] = false;
 	          goto finish;
 	        } else {
+	        	/*
+				 * 0 = id
+				 * 1 = date/time
+				 * 2 = user
+				 * 3 = result
+				 * 4 = time
+				 * 5 = mem
+				 * 6 = lag
+				 * 7 = solutionLink
+	        	 */
+	        	echo $tr->children(0)->plaintext."<br />";
+	        	echo $tr->children(1)->plaintext."<br />";
+	        	echo $tr->children(2)->plaintext."<br />";
+	        	echo $tr->children(3)->plaintext."<br />";
+	        	echo $tr->children(4)->plaintext."<br />";
+	        	echo $tr->children(5)->plaintext."<br />";
 	          $toReturn['problems'][$key]['solved'] = true;
 	        }
 	      }

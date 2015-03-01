@@ -287,7 +287,7 @@ function add_contest($code){
 	       if(!isset($_GET['fast']))
 	       	add_problem($pcode,$code,$name);
 	       	
-	       $sqlq = "insert into ".$code." values('"
+	       $sqlq = "insert into ".$code."  values('"
 	       	                               .$name."','"
 	       	                               .$pcode."','"
 	       	                               .$succsub."','"
@@ -340,7 +340,7 @@ foreach($html->find('div[id="statusdiv"]') as $div){
         $name =  trim($con->real_escape_string($tr->children(1)->plaintext));
         $start = toUnix($tr->children(2)->plaintext);
         $end = toUnix($tr->children(3)->plaintext);
-        $sqlq = "insert into list values('"
+        $sqlq = "insert into list (code,name,start,end) values('"
 					        			.$code."','"
 					        			.$name."','"
 					        			.$start."','"
