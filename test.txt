@@ -3558,3 +3558,254 @@ insert into CDME2015  values('Longest Path','LPATH','108','33.01');
 insert into CDME2015  values('Primal Function','PRFUN','32','16.93');
 insert into CDME2015  values('When Bruce asks Rachel!','DRKNGHT','24','27.44');
 insert into CDME2015  values('Dating Game','DGAME','1','0.56');
+insert into list (code,name,start,end) values('CDGO2015','Codigo 2015','1426627800','1426638000');
+CREATE TABLE CDGO2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CDGO2015  values('Gift of a Friend','FROOT4','116','33.52');
+insert into CDGO2015  values('Chef and Brownie','CHEFBWN','73','10.91');
+insert into CDGO2015  values('Combination of Brackets','COMBR','45','11.34');
+insert into CDGO2015  values('Query on Tree','RTREE','7','12.07');
+insert into CDGO2015  values('Avani and Magic','AMAGIC','1','0.97');
+insert into list (code,name,start,end) values('PRDN2015','Pradnya\'15','1426539600','1426546800');
+CREATE TABLE PRDN2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into PRDN2015  values('Skynet and the Resistance','INC1','132','16.93');
+insert into PRDN2015  values('University Exams','INC4','54','16.62');
+insert into PRDN2015  values('Cheap Publicity','INC5','26','17.42');
+insert into PRDN2015  values('Mauka Mauka','INC3','14','6.09');
+insert into PRDN2015  values('Gandalf the Grey','INC2','10','5.32');
+insert into list (code,name,start,end) values('MARCH15','March Challenge 2015','1425654000','1426518000');
+CREATE TABLE MARCH15( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into MARCH15  values('Chef and Notebooks','CNOTE','5337','32.49');
+insert into MARCH15  values('Sign Wave','SIGNWAVE','1663','10.99');
+insert into MARCH15  values('Devu and his Class','DEVCLASS','1132','9.76');
+insert into MARCH15  values('Count Substrings','STRSUB','815','6.64');
+insert into MARCH15  values('Sereja and Random Array','SEAPROAR','369','15.05');
+insert into MARCH15  values('Matrix','MTRWY','368','7.99');
+insert into MARCH15  values('Chef and Problems','QCHEF','185','4.86');
+insert into MARCH15  values('Counting on a Tree','TREECNT2','41','2.8');
+insert into MARCH15  values('Random Number Generator','RNG','31','2.09');
+insert into MARCH15  values('Embedding','EMBED','14','48.79');
+insert into list (code,name,start,end) values('ABYN2015','OPC-Abhiyanth 2015','1426453200','1426464000');
+CREATE TABLE ABYN2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into ABYN2015  values('Lucky and Arrays','LUCKYBIT','155','72.17');
+insert into ABYN2015  values('Lucky and XOR','LUCXOR','63','35.96');
+insert into ABYN2015  values('Lucky and Bulb','LUCBULB','36','28.91');
+insert into ABYN2015  values('Lucky and Digit','LDIGIT','31','13.17');
+insert into list (code,name,start,end) values('IOPC2015','IOPC 2015','1426356000','1426442400');
+CREATE TABLE IOPC2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into IOPC2015  values('Circular Cakewalk','IOPC15A','389','24.32');
+insert into IOPC2015  values('Ant Cakewalk','IOPC15O','313','22.96');
+insert into IOPC2015  values('Singal Pipes','IOPC15L','110','43.45');
+insert into IOPC2015  values('Maximum Flow in a Special Graph','IOPC15C','65','31.58');
+insert into IOPC2015  values('Weird World Cup','IOPC15R','52','39.26');
+insert into IOPC2015  values('Common Strings','IOPC15G','41','17.67');
+insert into IOPC2015  values('Fibonacci Wars I','IOPC15I','34','12.03');
+insert into IOPC2015  values('Cakewalk in Tree Land','IOPC15D','33','11.25');
+insert into IOPC2015  values('Reverse Pre-order Traversal','IOPC15Q','29','21.32');
+insert into IOPC2015  values('The socialist state of Karuka','IOPC15P','25','30');
+insert into IOPC2015  values('Maggi and Coin Tossing Experiment','IOPC15B','13','26.53');
+insert into IOPC2015  values('Fibonacci Wars II','IOPC15H','13','30.95');
+insert into IOPC2015  values('Kaleidoscope','IOPC15E','9','45.07');
+insert into IOPC2015  values('Counting Stars','IOPC15N','5','26.32');
+insert into IOPC2015  values('Encrypted Message','IOPC15M','4','8');
+insert into IOPC2015  values('Playground','IOPC15F','3','2.46');
+insert into IOPC2015  values('Churu Criteria for stability of Imaginary Gases','IOPC15K','1','4.55');
+insert into IOPC2015  values('Churu and his Sequence','IOPC15J','0','0');
+insert into list (code,name,start,end) values('KJCC1501','KJSCE Coding Challenge 2015','1426334400','1426377540');
+CREATE TABLE KJCC1501( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into KJCC1501  values('Sum and Color','KJCC02','339','62.56');
+insert into KJCC1501  values('Chef and Even Palindromes','KJCC05','276','62.5');
+insert into KJCC1501  values('Calculator plus plus','KJCC01','95','20.21');
+insert into KJCC1501  values('Maze Ways','KJCC06','60','19.69');
+insert into KJCC1501  values('Chefs Strings','KJCC03','47','21.15');
+insert into KJCC1501  values('Decode','KJCC07','25','28.09');
+insert into KJCC1501  values('Chef and Password','KJCC04','18','14.39');
+insert into KJCC1501  values('Clash of clans','KJCC08','12','38.24');
+insert into list (code,name,start,end) values('CDER2015','CodeERA','1425859200','1426334400');
+CREATE TABLE CDER2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CDER2015  values('DIGITAL DISPLAY','DISPLAY','772','65.98');
+insert into CDER2015  values('Lucky Palindrome','ESYYSE','595','76.87');
+insert into CDER2015  values('Factorial','FACT25','574','41.16');
+insert into CDER2015  values('Palindrome','PALIND','470','55.3');
+insert into CDER2015  values('REVERSE','REVER','339','36.02');
+insert into CDER2015  values('I D K XOR','EXORO','313','83.98');
+insert into CDER2015  values('ShOrT CuT WaY','SHORTCUT','207','67.98');
+insert into CDER2015  values('LUCKY LETTERS','LUCKYR','111','42.01');
+insert into CDER2015  values('Mathematics Genius','MATHS','53','3.61');
+insert into CDER2015  values('HELP DELHI','HELPND','52','28.79');
+insert into list (code,name,start,end) values('CDPH2015','Codephrenia 2015','1426107600','1426118400');
+CREATE TABLE CDPH2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CDPH2015  values('Prime Lines','PRLIN','129','21.19');
+insert into CDPH2015  values('Chef and Spooky Bottles','SPOOKY','30','16.92');
+insert into CDPH2015  values('Chef and Lottery Numbers','PRIMPAL','17','18.1');
+insert into CDPH2015  values('PJ and Snake','SNAKE','11','52.38');
+insert into CDPH2015  values('The Triangle Dimension','TRIDIM','6','18.75');
+insert into list (code,name,start,end) values('MTHX2015','MathRix OPC 2015','1426021200','1426024800');
+CREATE TABLE MTHX2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into MTHX2015  values('Fast but not Furious','FASTFUR','87','80');
+insert into MTHX2015  values('Be a comrade','CHOCS','11','28');
+insert into list (code,name,start,end) values('COTG2015','Code On the Go 2015','1425934800','1426024800');
+CREATE TABLE COTG2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into COTG2015  values('Chandler at Joeys place','PSG03','184','32.17');
+insert into COTG2015  values('At the birthday party','PSG02','49','81.43');
+insert into COTG2015  values('Valentines day out','PSG01','15','34.78');
+insert into COTG2015  values('Hack the mobile','PSG05','4','17.39');
+insert into COTG2015  values('Valid phone number','PSG04','3','1.53');
+insert into list (code,name,start,end) values('DCL1501','Delhi Coding League 2015','1425416400','1425762000');
+CREATE TABLE DCL1501( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into DCL1501  values('The name list','DCL2015B','369','29.62');
+insert into DCL1501  values('The Garage Sale','DCL2015A','221','19.97');
+insert into DCL1501  values('Sheldon and the mission','DCL2015D','82','17.3');
+insert into DCL1501  values('Chef and the matrix queries','DCL2015E','23','6.35');
+insert into DCL1501  values('Restaurant and dishes','DCL2015F','15','9');
+insert into DCL1501  values('Chef and the line segments','DCL2015G','7','2.65');
+insert into list (code,name,start,end) values('CDHU2015','Code Hunt 2015','1425628800','1425754800');
+CREATE TABLE CDHU2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CDHU2015  values('SORT','SORT4','243','79.01');
+insert into CDHU2015  values('HOLES IN TEXT','HOLES2','229','83.8');
+insert into CDHU2015  values('SIMPLE FACTORIAL','FCTR1','217','82.16');
+insert into CDHU2015  values('ATM','ATM5','206','62.35');
+insert into CDHU2015  values('PRIME PALINDROME','PRPAL3','178','86.38');
+insert into list (code,name,start,end) values('CCBE2015','C-Cube 2015','1425589200','1425632400');
+CREATE TABLE CCBE2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CCBE2015  values('Code Compile Contest','CCUBE01','119','40');
+insert into CCBE2015  values('Counting Stars','CCUBE05','21','42.86');
+insert into CCBE2015  values('ArmWeak Numbers','CCUBE04','14','6.23');
+insert into CCBE2015  values('Board Game','CCUBE02','0','0');
+insert into CCBE2015  values('Patrix','CCUBE03','0','0');
+insert into list (code,name,start,end) values('HUMP15R','Hindustan University Multi Provincial Re-Contest 2015','1425585600','1425600000');
+CREATE TABLE HUMP15R( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into HUMP15R  values('Chef and Laptop','CHEFLAPT','167','55.45');
+insert into HUMP15R  values('YJump','YJUMP','147','67.42');
+insert into HUMP15R  values('Chef Collects sticks','STICK','23','25.27');
+insert into HUMP15R  values('Overtake','OVERTAKE','8','13.56');
+insert into HUMP15R  values('Swapping in a matrix','SWAPMATR','5','50');
+insert into HUMP15R  values('Chef and beautiful patterns in the garden','CHEFGARD','5','29.41');
+insert into HUMP15R  values('Chef and cycle cover of a directed graph','CHEFCYCL','0','0');
+insert into list (code,name,start,end) values('ACMN2015','OPC ACUMEN 2015','1425479700','1425585600');
+CREATE TABLE ACMN2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into ACMN2015  values('Gray Code','ACUGRAY','431','67.7');
+insert into ACMN2015  values('Sort the minions','ACUGRAM','265','63.84');
+insert into ACMN2015  values('Play with Strings','ACUPALIN','145','29.58');
+insert into ACMN2015  values('List Game','ACULIST','125','46.72');
+insert into ACMN2015  values('Sets Test','ACUSET','114','54.43');
+insert into ACMN2015  values('Decode the messages','ACUPARA','5','4.69');
+insert into list (code,name,start,end) values('FBFRW15','February Farewell 2015','1425502800','1425513600');
+CREATE TABLE FBFRW15( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into FBFRW15  values('Network Management','FBFRW1','272','78.31');
+insert into FBFRW15  values('Bhai Ho','FBFRW2','110','19.24');
+insert into FBFRW15  values('Swap and her fav numbers','FBFRW3','44','19.31');
+insert into FBFRW15  values('Stamp collection','FBFRW4','1','3.7');
+insert into FBFRW15  values('DJ and Triangles','FBFRW5','0','0');
+insert into list (code,name,start,end) values('BRCD2015','BreakTheCode 2015','1425322800','1425384000');
+CREATE TABLE BRCD2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into BRCD2015  values('Cricket Fever','CKTFEV','603','65.28');
+insert into BRCD2015  values('Palindrome Happiness','PALHAPPY','472','51.75');
+insert into BRCD2015  values('Happy Suruchi','SURFRN','150','41.46');
+insert into BRCD2015  values('Obedient Rahul','RAGOOD','149','46.59');
+insert into BRCD2015  values('Teacher Troubles!','TTEACH','93','46.15');
+insert into BRCD2015  values('Noisy GTBIT!','NGTBIT','56','20.79');
+insert into list (code,name,start,end) values('BBYB2015','Beat By BIT 2015','1425236400','1425256800');
+CREATE TABLE BBYB2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into BBYB2015  values('The festival of colors','BIT1502','78','36.48');
+insert into BBYB2015  values('Yaar and Rescue','BIT1501','59','34.46');
+insert into BBYB2015  values('Chef and Yaar','BIT1504','32','20.65');
+insert into BBYB2015  values('The Last Attempt','BIT1505','30','41.46');
+insert into BBYB2015  values('Chef and Colors','BIT1506','24','16.89');
+insert into list (code,name,start,end) values('CDTR1502','CodeTrenders 2015','1425229200','1425250800');
+CREATE TABLE CDTR1502( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into CDTR1502  values('Reduce Time','TIME','426','48.44');
+insert into CDTR1502  values('Viva Round','QUERIES','202','81.51');
+insert into CDTR1502  values('Polynomial Product','MULTIPLY','166','58.28');
+insert into CDTR1502  values('Maximise Value','TOUR','165','27.91');
+insert into list (code,name,start,end) values('COCR2015','CodeCracker 2015','1425150000','1425168000');
+CREATE TABLE COCR2015( 
+			name varchar(100), 
+			code varchar(15) unique key, 
+			SuccSub int, 
+			Accuracy decimal(4,2));
+insert into COCR2015  values('Play with numbers','COCR07','282','22.34');
+insert into COCR2015  values('Play with strings','COCR02','101','26.35');
+insert into COCR2015  values('Exam','COCR04','39','15.95');
+insert into COCR2015  values('Robotics Event - 1','COCR05','27','25.23');
+insert into COCR2015  values('Richard and Cylinder','COCR08','17','34.69');
+insert into COCR2015  values('Roger and Tree II','COCR09','7','23.33');
+insert into COCR2015  values('Colours','COCR01','2','5.71');
+insert into COCR2015  values('Alice and Bob','COCR03','1','3.7');
+insert into COCR2015  values('Robotics Event - 2','COCR06','0','0');
+insert into COCR2015  values('Roger and Tree III','COCR10','0','0');
