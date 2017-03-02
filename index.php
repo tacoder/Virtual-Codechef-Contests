@@ -45,7 +45,7 @@
 		echo '<tr class="topRow"> 	<td>Name of contest</td> 	<td > Time left</td> </tr>';
 		for ($i=0;$i<$count;$i++) {
 			echo '<tr class="'.($i%2==0?"rowLight":"rowDark").'">';
-			echo '<td><a href="/virtualcode/contest/'.$tcod[$i].'/">'.$tcon[$i].'</a></td>';
+			echo '<td><a href="contest/'.$tcod[$i].'/">'.$tcon[$i].'</a></td>';
 			echo '<td id="tm'.$i.'"></td>';
 			echo '</tr>';
 		}

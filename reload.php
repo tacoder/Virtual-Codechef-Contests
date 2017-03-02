@@ -36,7 +36,7 @@ if(!mysqli_query($con,'select 1 from list')){
 		name varchar(200) not null primary key,
 		start bigint not null,
 		end bigint not null,
-		type int not null);');
+		type int not null default 0);');
 }
 
 /*
